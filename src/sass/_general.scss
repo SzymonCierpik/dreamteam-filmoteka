@@ -1,11 +1,10 @@
-@import '~node_modules/modern-normalize/modern-normalize.css';
 * {
   padding: 0;
   margin: 0;
 }
 
 body {
-  font-family: "Roboto";
+  font-family: $font;
 }
 
 .container {
@@ -30,4 +29,4 @@ figure {
 
 a {
   text-decoration: none;
-}/*# sourceMappingURL=index.css.map */
+}
