@@ -102,6 +102,88 @@ img {
   background-size: cover;
 }
 
+.header--library {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header__menu {
+  padding-top: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 39px;
+}
+
+.logo__link {
+  stroke: #ffffff;
+  fill: none;
+  outline: none;
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.logo__link:hover, .logo__link:focus {
+  stroke: #ff6b08;
+  fill: none;
+}
+
+.nav__link {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  text-transform: uppercase;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav__link:hover, .nav__link:focus {
+  outline: none;
+  color: #ff6b08;
+}
+
+.header__body {
+  padding-block: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header__button {
+  padding-block: 14px;
+  width: 130px;
+  background: none;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header__button:hover, .header__button:focus {
+  background: #ff6b01;
+  border: none;
+  outline: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 8px 43px rgba(255, 107, 1, 0.6);
+}
+
+.header__text {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 320px) and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .section--library {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/library-m@2x.jpg");
+  }
+}
 .films-cards-set {
   padding-top: 20px;
   padding-bottom: 40px;
