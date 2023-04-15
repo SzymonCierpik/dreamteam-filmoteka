@@ -1,0 +1,191 @@
+@media screen and (min-width: $mobile) {
+    .container-header {
+        margin: 0;
+        height: 230px;
+        max-width: 100%;
+        background-image: url(../images/header-home/header-home-bg-mobile.jpg);
+        @media (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        background-image: url(../images/header-home/header-home-bg-mobile@2.jpg);
+        }
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background: $gray;
+    }
+.header-nav {
+    display: flex;
+    height: 118px;
+    justify-content: space-between;
+}
+.header-nav__logo {
+        margin-top: 40px;
+        margin-left: 20px;
+        margin-bottom: 51px;
+        align-items: center;
+        display: flex;
+    }
+
+.header-logo {
+    text-decoration: none;
+}
+.header-logo:hover,
+:focus {
+    color: $orange-font;
+}
+.header-nav__svg {
+    fill: none;
+    color: $white;
+    height: 24px;
+    width: 24px;
+    }
+.header-nav__name {
+        display: none;
+    }
+.header-nav-items {
+    display: flex;
+    justify-items: flex-end;
+}
+.header-nav-items__page {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    padding: 0px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.06px;
+    align-items: center;
+    color: $white;
+    text-transform: uppercase;
+    gap: 39px;
+    margin-top: 44px;
+    margin-right: 20px;
+    justify-content: flex-end;
+    }
+.header-nav-items__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.header-nav__link:hover,
+:focus {
+    color: $orange-font;
+}
+.header-nav-items--acive::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background: $red;
+    top: 14px;
+    left: 0;
+    right: 0;
+    }
+.header-search {
+    height: 112px;
+    display: flex;
+    justify-content: center;
+}
+.header-search__form {
+    height: 20px;
+    display: flex;
+    width: 280px;
+    border-bottom: 0.5px solid white;
+    margin: 0;
+    }
+.header-search__input {
+    background-color: inherit;
+    border: none;
+    width: 264px;
+    caret-color: $red;
+}
+.header-search__input:focus,
+    :hover {
+    outline: none;
+    border: none;
+    }
+.header-search__input::placeholder {
+        color: white;
+    }
+.header-search__btn {
+    height: 10px;
+    width: 10px;
+    background-color: inherit;
+    border: none;
+    justify-content: flex-end;
+    }
+.header-search__icon {
+    fill: none;
+    height: 10px;
+    width: 10px;
+    }
+}
+
+@media screen and (min-width: $tablet){
+    
+    .container-header {
+        background-image: url(../images/header-home/header-home-bg-tablet.jpg);
+        @media (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background-image: url(../images/header-home/header-home-bg-tablet@2.jpg);
+    }
+}
+.header-nav {
+    display: flex;
+    height: 116px;
+}
+}
+.header-nav__name {
+    display: block;
+    margin: 0px;
+    color: $white;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35.16px;
+    align-items: center;
+}
+.header-nav__svg {
+    margin-right: 10px;
+}
+
+
+@media screen and (min-width: $desktop){
+.container-header {
+    height: 216px;
+    background-image: url(../images/header-home/header-home-bg.jpg);
+    @media (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+           
+         background-image: url(../images/header-home/header-home-bg@2.jpg);
+}
+}
+.header-nav__logo {
+    margin-top: 45px;
+    margin-left: 32px;
+    margin-bottom: 41px;
+    justify-content: space-between;
+}
+.header-nav-items {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 32px;
+    justify-items: flex-end; 
+}
+.header-nav-items__page {
+    margin-top: 49px;
+}
+.header-search {
+    height: 100px;
+}
+.header-search__form {
+    width: 394px;
+}
+.header-search__input {
+    width: 374px;
+}
+}
