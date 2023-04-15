@@ -8,3 +8,23 @@
   background-position: center center;
   background-size: cover;
 }
+.container--library {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.nav {
+  padding-top: 44px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 39px;
+}
+.nav__link {
+  color: $white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  text-transform: uppercase;
+}
