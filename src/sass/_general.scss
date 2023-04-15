@@ -5,9 +5,8 @@
 
 body {
   font-family: $font;
+  background-color: black;
 }
-
-
 
 ul {
   margin-block-start: 0;
@@ -27,7 +26,6 @@ figure {
 a {
   text-decoration: none;
 }
-
 
 // Moj reset
 
@@ -60,6 +58,7 @@ p {
   margin: 0;
   padding: 0;
 }
+
 img {
   display: block;
   max-width: 100%;
