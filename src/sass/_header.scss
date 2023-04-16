@@ -114,7 +114,7 @@
     justify-content: flex-end;
     cursor: pointer;
     &:focus,
-    :hover{
+    &:hover {
         stroke: $orange-font;
         fill: none;
     }
