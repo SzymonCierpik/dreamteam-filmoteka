@@ -1,0 +1,42 @@
+.footer {
+  font-family: var($font);
+  font-size: 14px;
+  line-height: 1.14;
+  color: var($footer-font);
+  padding-bottom: 29.7px;
+  padding-top: 28.71px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    padding-block: 30px;
+    font-size: 16px;
+    line-height: 1.19;
+  }
+
+  @media (min-width: 1280px) {
+    padding-bottom: 28px;
+  }
+}
+
+.footer__wrapper {
+  align-content: center;
+  padding-top: 9.9px;
+
+  @media (min-width: 768px) {
+    padding-top: 0px;
+    padding-left: 4px;
+  }
+}
+
+.footer__icon {
+  padding-inline: 10px;
+  fill: var($orange-font);
+}
+
+.footer__font {
+  text-decoration: underline;
+  padding-left: 4px;
+}
