@@ -1,9 +1,9 @@
 .section--library {
   margin: 0 auto;
   background: $gray;
-  background-image: url('../images/library-m.jpg'); /* fallback */
-  background-image: linear-gradient(rgba(47 48 58 / 0.4), rgba(47 48 58 / 0.4)),
-    url('../images/library-m.jpg');
+  background-image: url('../images/library/library-m.webp'); /* fallback */
+  background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
+    url('../images/library/library-m.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -20,7 +20,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.nav {
+.nav__list {
   display: flex;
   align-items: center;
   gap: 39px;
@@ -51,13 +51,19 @@
     color: $orange-font;
   }
 }
-.header__body {
+.buttons__list {
   padding-block: 60px;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
-.header__button {
+.buttons__button {
+  color: $white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
   padding-block: 14px;
   width: 130px;
   background: none;
@@ -76,22 +82,33 @@
     );
   }
 }
-.header__text {
-  color: $white;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  text-transform: uppercase;
-}
+
+//Background for Retina display
 @media screen and (min-width: $mobile) and (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .section--library {
-    background-image: linear-gradient(
-        rgba(47 48 58 / 0.4),
-        rgba(47 48 58 / 0.4)
-      ),
-      url('../images/library-m@2x.jpg');
+    background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
+      url('../images/library/library-m@2x.webp');
+  }
+}
+
+// -------------
+// TABLET styles
+// -------------
+@media screen and (min-width: $tablet) {
+  .section--library {
+    background-image: url('../images/library/library-t.webp'); /* fallback */
+    background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
+      url('../images/library/library-t.webp');
+  }
+}
+//Background for Retina display
+@media screen and (min-width: $tablet) and (min-device-pixel-ratio: 2),
+  screen and (min-width: $tablet) and (min-resolution: 192dpi),
+  screen and (min-width: $tablet) and (min-resolution: 2dppx) {
+  .section--library {
+    background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
+      url('../images/library/library-t@2x.webp');
   }
 }
