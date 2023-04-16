@@ -36,7 +36,9 @@
     fill: none;
   }
 }
-
+.logo__text {
+  display: none;
+}
 .nav__link {
   color: $white;
   font-style: normal;
@@ -49,7 +51,22 @@
   &:focus {
     outline: none;
     color: $orange-font;
+    // &::after {
+    //   background: $orange-font;
+    // }
   }
+}
+.nav__item {
+  position: relative;
+}
+.nav__link--active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: -3px;
+  background: $red;
 }
 .buttons__list {
   padding-block: 60px;
@@ -93,14 +110,30 @@
   }
 }
 
-// -------------
-// TABLET styles
-// -------------
+//TABLET STYLES
 @media screen and (min-width: $tablet) {
   .section--library {
     background-image: url('../images/library/library-t.webp'); /* fallback */
     background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
       url('../images/library/library-t.webp');
+  }
+  .logo__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $white;
+    transition: color $transition, stroke $transition;
+    &:hover,
+    &:focus {
+      color: $orange-font;
+    }
+  }
+  .logo__text {
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.16;
   }
 }
 //Background for Retina display
@@ -110,5 +143,27 @@
   .section--library {
     background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
       url('../images/library/library-t@2x.webp');
+  }
+}
+
+//DESKTOP STYLES
+@media screen and (min-width: $desktop) {
+  .section--library {
+    max-width: 1600px;
+    background-image: url('../images/library/library-d.webp'); /* fallback */
+    background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
+      url('../images/library/library-d.webp');
+  }
+  .header--library {
+    max-width: 1280px;
+  }
+}
+//Background for Retina display
+@media screen and (min-width: $desktop) and (min-device-pixel-ratio: 2),
+  screen and (min-width: $desktop) and (min-resolution: 192dpi),
+  screen and (min-width: $desktop) and (min-resolution: 2dppx) {
+  .section--library {
+    background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
+      url('../images/library/library-d@2x.webp');
   }
 }
