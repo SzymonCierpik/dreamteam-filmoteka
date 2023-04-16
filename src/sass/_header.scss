@@ -116,8 +116,12 @@
     border: none;
     justify-content: flex-end;
     cursor: pointer;
+    &:focus,
+    &:hover {
+        stroke: $orange-font;
+        fill: none;
+    }
 }
-
 .header-search__icon {
     display: block;
     stroke: $white;
