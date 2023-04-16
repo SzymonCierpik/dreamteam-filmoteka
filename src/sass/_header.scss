@@ -30,8 +30,8 @@
   stroke: $white;
   fill: none;
   outline: none;
-  transition: stroke $transition;
-  transition: color $transition;
+  color: $white;
+  transition: all $transition;
   &:hover,
   &:focus {
     stroke: $orange-font;
@@ -41,7 +41,7 @@
 }
 
 .header-nav__name {
-        display: none;
+    display: none;
     }
 .header-nav-items {
     display: flex;
@@ -66,11 +66,13 @@
     position: relative;
     display: flex;
     align-items: center;
+    transition: color $transition;
+    &:hover,
+    &:focus {
+        color: $orange-font;
+    }
 }
-.header-nav-items__link:hover,
-:focus {
-    color: $orange-font;
-}
+
 .header-nav-items__link--active::after {
     content: "";
     position: absolute;
@@ -97,15 +99,16 @@
     border: none;
     width: 264px;
     caret-color: $orange-font;
+    color: $orange-font;
 }
 .header-search__input:focus,
     :hover {
     outline: none;
     }
 .header-search__input::placeholder {
-        color: white;
-        font-size: 14px;
-    }
+    color: $white;
+    font-size: 14px;
+}
 .header-search__btn {
     height: 12px;
     width: 12px;
@@ -113,12 +116,8 @@
     border: none;
     justify-content: flex-end;
     cursor: pointer;
-    &:focus,
-    :hover{
-        stroke: $orange-font;
-        fill: none;
-    }
-    }
+}
+
 .header-search__icon {
     display: block;
     stroke: $white;
@@ -142,7 +141,6 @@
         url('../images/header-home-bg-tablet.webp');
 }
 .header-nav {
-    display: flex;
     height: 116px;
 }
 
@@ -154,6 +152,7 @@
     font-weight: 500;
     line-height: 35.16px;
     align-items: center;
+    transition: color $transition;
     &:hover,
     &:focus {
     color: $orange-font;
@@ -162,6 +161,12 @@
 }
 .header-nav__svg {
     margin-right: 10px;
+}
+.header-search__form {
+    width: 336px;
+}
+.header-search__input {
+    width: 324px;
 }
 }
 
