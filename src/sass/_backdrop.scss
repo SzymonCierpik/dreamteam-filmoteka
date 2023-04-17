@@ -37,24 +37,24 @@ background-color: white;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: $mobile) {
   width: 280px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   width: 704px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop) {
   width: 806px;
 }
 }
 
 .info-wrap {
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   width: 264px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop) {
   width: 100%;
 }
 }
@@ -69,13 +69,13 @@ width: 240px;
 height: 357px;
 border-radius: 5px;
 margin-bottom: 20px;
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   width: 264px;
   height: 374px;
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop) {
   width: 375px;
   height: 478px;
 }
@@ -90,7 +90,7 @@ line-height: 35px;
 margin-bottom: 20px;
 text-transform: uppercase;
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop) {
   font-size: 30px;
 }
 }
@@ -112,10 +112,10 @@ font-weight: 500;
 font-size: 12px;
 margin-right: 41px;
 padding: 0;
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop) {
   margin-right: 85px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   margin-right: 40px;
 
 }
@@ -191,7 +191,7 @@ margin-top: 20px;
 flex-direction: row;
 align-items: center;
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   gap: 7px;
 }
 }
@@ -214,12 +214,12 @@ font-size: 12px;
 display: block;
 padding: 48px 20px 40px;
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: $mobile) {
   width: 320px;
   height:940px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   display: flex;
   width: 704px;
   height: 552px;
@@ -227,7 +227,7 @@ padding: 48px 20px 40px;
   justify-content: space-between;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop) {
   width: 806px;
   height: 558px;
   padding: 40px 12px;
