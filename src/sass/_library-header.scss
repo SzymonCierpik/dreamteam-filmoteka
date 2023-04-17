@@ -8,13 +8,14 @@
   background-position: center center;
   background-size: cover;
 }
-.header--library {
+.container--library {
   box-sizing: border-box;
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
 }
-.header__menu {
+.header--library {
+  margin: 0 auto;
   padding-top: 44px;
   display: flex;
   justify-content: space-between;
@@ -149,7 +150,6 @@
 //DESKTOP STYLES
 @media screen and (min-width: $desktop) {
   .section--library {
-    max-width: 1600px;
     background-image: url('../images/library/library-d.webp'); /* fallback */
     background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
       url('../images/library/library-d.webp');
