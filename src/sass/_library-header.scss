@@ -16,7 +16,7 @@
 }
 .header--library {
   margin: 0 auto;
-  padding-top: 44px;
+  padding-top: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,7 +82,7 @@
   font-size: 12px;
   line-height: 16px;
   text-transform: uppercase;
-  padding-block: 14px;
+  padding-block: 13px;
   width: 130px;
   background: none;
   border-radius: 5px;
@@ -118,6 +118,9 @@
     background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
       url('../images/library/library-t.webp');
   }
+  .container--library {
+    padding: 0 32px;
+  }
   .logo__link {
     display: flex;
     align-items: center;
@@ -135,6 +138,9 @@
     font-weight: 500;
     font-size: 30px;
     line-height: 1.16;
+  }
+  .buttons__list {
+    padding-top: 40px;
   }
 }
 //Background for Retina display
