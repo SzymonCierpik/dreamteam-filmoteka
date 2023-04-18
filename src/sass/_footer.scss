@@ -10,8 +10,10 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: absolute;
+  bottom: 0;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     padding-block: 30px;
     font-size: 16px;
     line-height: 1.19;
@@ -19,9 +21,13 @@
     justify-content: center;
   }
 
-  @media (min-width: 1280px) {
+  @media screen and (min-width: $desktop) {
     padding-bottom: 28px;
   }
+}
+
+.container.footer {
+  background-color: $footer;
 }
 
 .footer__wrapper {
@@ -29,7 +35,7 @@
   display: flex;
   padding-top: 9.9px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     padding-top: 0px;
     padding-left: 4px;
   }
@@ -43,4 +49,5 @@
 .footer__font {
   text-decoration: underline;
   padding-left: 4px;
+  display: inline;
 }
