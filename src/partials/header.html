@@ -29,16 +29,18 @@
         <input
           class="header-search__input"
           type="text"
-          name="movieSearch"
+          name="searchQuery"
           autocomplete="off"
           placeholder="Movie search"
+          data-input
         />
-        <button type="submit" class="header-search__btn">
+        <button type="submit" class="header-search__btn" data-search>
           <svg class="header-search__icon" width="12" height="12">
             <use href="./images/icons.svg#icon-search"></use>
           </svg>
         </button>
       </form>
+      <p class="header-search__text" role="alert" id="wrongSearch"></p>
     </div>
   </div>
 </header>
