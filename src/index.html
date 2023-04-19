@@ -14,6 +14,21 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
+    <!-- INPUT - START-->
+    <input type="text" name="searchQuery" autocomplete="off" placeholder="Movie Search" />
+    <p role="alert" id="wrongSearch"></p>
+    <button type="click" class="form-button">
+      <svg class="icon" id="search-icon">
+        <use href="images/icons.svg#icon-search"></use>
+      </svg>
+    </button>
+    <!-- INPUT - END-->
+    
+    <!-- TEMPORARY GALLERY - START-->
+    <div class="gallery">
+      <!-- Obraz karty -->
+    </div>
+    <!-- TEMPORARY GALLERY - END -->
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <include src="./partials/example.html"></include>
   </body>
