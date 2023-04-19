@@ -1,5 +1,4 @@
-// const alert = document.querySelector('#wrongSearch');
-// console.log('alert: ', alert);
+const alert = document.querySelector('#wrongSearch');
 const API_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = 'b118f38ec77100db6763b4cc83604589'; // Should be changed to the correct one
 
