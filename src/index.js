@@ -55,7 +55,7 @@ const createGallery = data => {
       return `
         <div class="film-card">
         <a href=https://image.tmdb.org/t/p/original/${movie.poster_path}>
-        <img src="https://image.tmdb.org/t/p/w200/${movie.poster_path}" alt="${movie.title}" loading="lazy" /> 
+        <img class="film-img" src="https://image.tmdb.org/t/p/w200/${movie.poster_path}" alt="${movie.title}" loading="lazy" /> 
         <div class="info">
         <p class="info-item">${movie.original_title}</p>
         <p class="info-item">${genresTitle}</p>
