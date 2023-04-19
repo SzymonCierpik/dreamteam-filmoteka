@@ -16,7 +16,7 @@
   const gallery = document.querySelector('.gallery');
   const alert = document.querySelector('#wrongSearch');
   let query = '';
-   
+  
   const handleChange = e => query = e.target.value.trim();
   
  
