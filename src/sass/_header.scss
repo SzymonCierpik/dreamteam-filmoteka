@@ -95,16 +95,17 @@
   text-transform: uppercase;
   gap: 39px;
   margin-right: 20px;
-  justify-content: flex-end;
+
 }
 .header-nav-items__link {
   position: relative;
   display: flex;
   align-items: center;
-  transition: color $transition;
+  transition: all $transition;
   &:hover,
   &:focus {
     color: $orange-font;
+    scale: 1.2;
   }
 }
 
@@ -116,6 +117,17 @@
   top: 14px;
   left: 0;
   right: 0;
+}
+.user-icon {
+  stroke: $white;
+  fill: $white;
+  transition: all $transition;
+  &:hover,
+  &:focus {
+     stroke: $orange-font;
+     fill: $orange-font;
+     scale: 1.2;
+  }
 }
 .header-search {
   display: flex;
