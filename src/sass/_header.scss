@@ -25,20 +25,55 @@
   display: flex;
   text-decoration: none;
 }
-
-.header-logo {
+.header-logo>svg {
   stroke: $white;
   fill: none;
   outline: none;
-  color: $white;
-  transition: stroke $transition, color $transition;
-  &:hover,
-  &:focus {
-    stroke: $orange-font;
-    fill: none;
-    color: $orange-font;
+  transition: stroke $transition;
+   -webkit-animation: pulsing 4s infinite;
+  animation: pulsing 4s infinite;
+}
+@-webkit-keyframes pulsing {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  50% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
   }
 }
+
+@keyframes pulsing {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  50% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+  .header-logo:hover>svg {
+     stroke: $orange-font;
+     fill: none;
+  }
+
+.header-logo>span {
+  color: $white;
+  transition: color $transition;
+}
+  .header-logo:hover>span {
+     color: $orange-font;
+  }
 
 .header-nav__name {
   display: none;
@@ -128,7 +163,7 @@
   transition: stroke $transition;
   &:hover {
     stroke: $orange-font;
-    scale: 1.2;
+    scale: 1.5;
   }
 }
 .header-search__text {
@@ -162,11 +197,6 @@
     font-weight: 500;
     line-height: 35.16px;
     align-items: center;
-    transition: color $transition;
-    &:hover,
-    &:focus {
-      color: $orange-font;
-    }
   }
   .header-nav__svg {
     margin-right: 10px;
