@@ -19,24 +19,27 @@ let query = '';
 
 const handleChange = e => (query = e.target.value.trim());
 
-const genresMovieIds = async () => {
+const genresMovieIds = () => {
   getGenresMovies();
-  console.log('alert: ', alert);
+  // console.log('alert: ', alert);
   const genreIdsJson = sessionStorage.getItem('genresIds');
-  console.log(genreIdsJson);
+  // console.log(genreIdsJson);
   const genreIdsParse = JSON.parse(genreIdsJson);
-  console.log(genreIdsParse);
+  // console.log(genreIdsParse);
   return genreIdsParse;
 };
 const genreMovie = genresMovieIds();
-const genreId = async id => {
-  const genreName = await genreMovie.filter(e => e.id === id);
-  return genreName[0].name;
-};
+// console.log(genreMovie);
 
-const createGenreArray = genreIds => {
-  const genreArray = genreIds.slice(0, 3).map(id => genreId(id));
-  return genreArray.join(',');
+const createGenreArray = (genre_Ids) => {
+  let newArray = [];
+  genre_Ids.map(genreId => {
+    newArray.push(genreMovie.find(genre => genre.id === genreId))
+  });
+  return newArray
+    .map(genre => genre.name)
+    .splice(0, 3)
+    .join(', ')
 };
 
 const handleClick = async e => {
@@ -55,7 +58,7 @@ const createGallery = data => {
       return `
         <div class="film-card">
         <a href=https://image.tmdb.org/t/p/original/${movie.poster_path}>
-        <img class="film-img" src="https://image.tmdb.org/t/p/w300/${movie.poster_path}" alt="${movie.title}" loading="lazy" /> 
+        <img class="film-img" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" loading="lazy" /> 
         <div class="info">
         <p class="info-item">${movie.original_title}</p>
         <p class="info-item">${genresTitle}</p>
