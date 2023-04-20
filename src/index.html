@@ -11,30 +11,17 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <script
-			src="https://kit.fontawesome.com/2707afadc2.js"
-			crossorigin="anonymous"></script>
-    <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <!-- INPUT - START-->
-    <input type="text" name="searchQuery" autocomplete="off" placeholder="Movie Search" />
-    <p role="alert" id="wrongSearch"></p>
-    <button type="click" class="form-button">
-      <svg class="icon" id="search-icon">
-        <use href="images/icons.svg#icon-search"></use>
-      </svg>
-    </button>
-    <!-- INPUT - END-->
-    
-    <!-- TEMPORARY GALLERY - START-->
-    <div class="gallery">
-      <!-- Obraz karty -->
-    </div>
-    <!-- TEMPORARY GALLERY - END -->
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <include src="./partials/header.html"></include>
+    <include src="./partials/gallery.html"></include>
     <include src="./partials/backdrop.html"></include>
-    <include src="./partials/footer.html"></include>
+    <!-- <include src="./partials/footer.html"></include> -->
+    <script type="module" src="./index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2707afadc2.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
