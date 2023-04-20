@@ -14,6 +14,24 @@
 .film-img {
   border-radius: 5px;
 }
+.info {
+  padding-top: 12px;
+}
+.info-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: $black;
+}
+.info-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: $orange-font;
+}
 
 //TABLET STYLES
 @media screen and (min-width: $tablet) {
@@ -36,7 +54,5 @@
   }
   .film-card {
     flex-basis: calc((100% - (16px * 2)) / 3);
-    height: 634px;
-    margin-bottom: 16px;
   }
 }

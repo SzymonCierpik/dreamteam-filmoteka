@@ -31,15 +31,15 @@ const genresMovieIds = () => {
 const genreMovie = genresMovieIds();
 // console.log(genreMovie);
 
-const createGenreArray = (genre_Ids) => {
+const createGenreArray = genre_Ids => {
   let newArray = [];
   genre_Ids.map(genreId => {
-    newArray.push(genreMovie.find(genre => genre.id === genreId))
+    newArray.push(genreMovie.find(genre => genre.id === genreId));
   });
   return newArray
     .map(genre => genre.name)
     .splice(0, 3)
-    .join(', ')
+    .join(', ');
 };
 
 const handleClick = async e => {
@@ -60,10 +60,8 @@ const createGallery = data => {
         <a href=https://image.tmdb.org/t/p/original/${movie.poster_path}>
         <img class="film-img" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" loading="lazy" /> 
         <div class="info">
-        <p class="info-item">${movie.original_title}</p>
-        <p class="info-item">${genresTitle}</p>
-        <p class="info-item">${movie.release_date}</p>
-        <p class="info-item">${movie.vote_average}</p>
+        <p class="info-title">${movie.original_title}</p>
+        <p class="info-text">${genresTitle} | ${movie.release_date} ${movie.vote_average}</p>
         </div>
         </a>
         </div>
@@ -82,17 +80,16 @@ function clearGallery() {
 
 // INPUT - END//
 
+// Dark Mode
 
-// Dark Mode 
+const body = document.querySelector('body');
+const icon = document.querySelector('.fa-regular');
+const switchBtn = document.querySelector('#toggle__checkbox');
 
-const body = document.querySelector("body");
-const icon = document.querySelector(".fa-regular");
-const switchBtn = document.querySelector("#toggle__checkbox");
-
-switchBtn.addEventListener("click", () => {
-  body.classList.toggle("dark__theme");
-  icon.classList.toggle("fa-sun");
-  icon.classList.toggle("fa-moon");
+switchBtn.addEventListener('click', () => {
+  body.classList.toggle('dark__theme');
+  icon.classList.toggle('fa-sun');
+  icon.classList.toggle('fa-moon');
 });
 
 // Dark Mode End
