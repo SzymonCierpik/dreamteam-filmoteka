@@ -234,3 +234,19 @@ padding: 48px 20px 40px;
   gap: 16px;
 }
 }
+
+// Animacja otwierająca Modal
+
+.modal-animation {
+	animation: toggleModal 0.5s;
+}
+
+@keyframes toggleModal {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
