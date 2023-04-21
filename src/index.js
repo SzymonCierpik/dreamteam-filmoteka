@@ -1,7 +1,6 @@
+import "./JS/loader.js";
 import { getMovies, getPopularMovies, getGenresMovies } from './js/getMovies';
-
 // MOST POPULAR MOVIES - START //
-
 window.onload = async () => {
   const data = await getPopularMovies();
   createGallery(data.results);
@@ -93,3 +92,4 @@ switchBtn.addEventListener('click', () => {
 });
 
 // Dark Mode End
+
