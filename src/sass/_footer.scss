@@ -10,6 +10,7 @@
   align-items: center;
   text-align: center;
   background-color: $footer;
+  width: 100%;
 
   @media screen and (min-width: $tablet) {
     padding-block: 30px;
@@ -37,11 +38,6 @@
     padding-top: 0px;
     padding-left: 4px;
   }
-}
-
-.footer__icon {
-  margin-inline: 10px;
-  fill: $orange-font;
 }
 
 .footer__font {
