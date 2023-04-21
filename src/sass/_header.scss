@@ -1,36 +1,38 @@
-.container-header {
+.section-header {
   margin: 0 auto;
   background: $gray;
-  height: 230px;
-  width: 100%;
-  max-width: 100%;
+  background-image: url('../images/header-home-bg-mobile.webp'); /* fallback */
   background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
     url('../images/header-home-bg-mobile.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
+.container-header {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
 .header-nav {
   display: flex;
-  height: 118px;
+  padding-top: 40px;
   justify-content: space-between;
   align-items: center;
 }
 .header-nav__logo {
-  margin-top: 40px;
-  margin-left: 20px;
-  margin-bottom: 51px;
   justify-content: space-between;
   align-items: center;
   display: flex;
   text-decoration: none;
 }
-.header-logo>svg {
+.header-logo > svg {
   stroke: $white;
   fill: none;
   outline: none;
   transition: stroke $transition;
-   -webkit-animation: pulsing 4s infinite;
+  -webkit-animation: pulsing 4s infinite;
   animation: pulsing 4s infinite;
 }
 @-webkit-keyframes pulsing {
@@ -62,25 +64,24 @@
     transform: scale(1, 1);
   }
 }
-  .header-logo:hover>svg {
-     stroke: $orange-font;
-     fill: none;
-  }
+.header-logo:hover > svg {
+  stroke: $orange-font;
+  fill: none;
+}
 
-.header-logo>span {
+.header-logo > span {
   color: $white;
   transition: color $transition;
 }
-  .header-logo:hover>span {
-     color: $orange-font;
-  }
+.header-logo:hover > span {
+  color: $orange-font;
+}
 
 .header-nav__name {
   display: none;
 }
 .header-nav-items {
   display: flex;
-  justify-self: flex-end;
 }
 .header-nav-items__page {
   text-decoration: none;
@@ -94,8 +95,6 @@
   color: $white;
   text-transform: uppercase;
   gap: 39px;
-  margin-right: 20px;
-
 }
 .header-nav-items__link {
   position: relative;
@@ -124,20 +123,22 @@
   transition: all $transition;
   &:hover,
   &:focus {
-     stroke: $orange-font;
-     fill: $orange-font;
-     scale: 1.2;
+    stroke: $orange-font;
+    fill: $orange-font;
+    scale: 1.2;
   }
 }
 .header-search {
+  padding-top: 54px;
+  padding-bottom: 44px;
   display: flex;
-  flex-wrap: wrap;
-  height: 112px;
+  flex-direction: column;
+  gap: 16px;
   display: flex;
   justify-content: center;
-  margin: 0px 20px;
 }
 .header-search__form {
+  margin: 0 auto;
   height: 20px;
   display: flex;
   width: 100%;
@@ -179,7 +180,19 @@
   }
 }
 .header-search__text {
+  margin: 0 auto;
+  max-width: 336px;
+  height: 32px;
   color: $red;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+}
+.toggle__wrapper {
+  position: absolute;
+  bottom: 9px;
+  right: 20px;
 }
 
 @media screen and (min-width: $mobile) and (min-device-pixel-ratio: 2),
@@ -192,13 +205,13 @@
 }
 
 @media screen and (min-width: $tablet) {
-  .container-header {
-    height: 216px;
+  .section-header {
+    background-image: url('../images/header-home-bg-tablet.webp'); /* fallback */
     background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
       url('../images/header-home-bg-tablet.webp');
   }
-  .header-nav {
-    height: 116px;
+  .container-header {
+    padding: 0 32px;
   }
 
   .header-nav__name {
@@ -207,18 +220,27 @@
     color: $white;
     font-size: 30px;
     font-weight: 500;
-    line-height: 35.16px;
+    line-height: 1.16;
     align-items: center;
   }
   .header-nav__svg {
     margin-right: 10px;
   }
   .header-search {
-    margin: 0px 216px;
+    padding-top: 40px;
+    padding-inline: 184px;
   }
   .header-search__form {
     width: 100%;
     max-width: 394px;
+  }
+  .header-search__text {
+    max-width: 394px;
+  }
+  .toggle__wrapper {
+    position: absolute;
+    bottom: 9px;
+    right: 32px;
   }
 }
 
@@ -232,28 +254,13 @@
 }
 
 @media screen and (min-width: $desktop) {
-  .container-header {
+  .section-header {
+    background-image: url('../images/header-home-bg.webp'); /* fallback */
     background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
       url('../images/header-home-bg.webp');
   }
-  .header-nav__logo {
-    margin-top: 45px;
-    margin-left: 32px;
-    margin-bottom: 41px;
-  }
-  .header-nav-items {
-    align-items: center;
-  }
-  .header-nav-items__page {
-    margin-right: 32px;
-  }
-  .header-search {
-    height: 100px;
-    margin: 0px 443px;
-  }
-  .header-search__form {
-    width: 100%;
-    max-width: 470px;
+  .container-header {
+    max-width: 1280px;
   }
 }
 @media screen and (min-width: $desktop) and (min-device-pixel-ratio: 2),
