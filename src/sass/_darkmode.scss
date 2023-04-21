@@ -1,6 +1,13 @@
+.toggle__wrapper {
+  position: absolute;
+  bottom: 9px;
+  right: 20px;
+  line-height: 29px;
+  align-items: center;
+}
 
 body.dark__theme {
-	background-color: grey;
+	background-color: #1a1818;;
 }
 
 .toggle__switch {
@@ -23,7 +30,7 @@ body.dark__theme {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #ccc;
+	background-color: rgba($color: #f7efef, $alpha: 0.1);
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 	border-radius: 26px;
@@ -36,18 +43,18 @@ body.dark__theme {
 	width: 20px;
 	left: 3px;
 	bottom: 3px;
-	background-color: white;
+	background-color: $orange-font;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 	border-radius: 50%;
 }
 
 input:checked + .toggle__slider {
-	background-color: orange;
+	background-color: rgba($color: #000000, $alpha: 0.5);
 }
 
 input:focus + .toggle__slider {
-	box-shadow: 0 0 1px orange;
+	box-shadow: 0 0 4px $orange-font;
 }
 
 input:checked + .toggle__slider:before {
