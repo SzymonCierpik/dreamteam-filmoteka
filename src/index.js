@@ -93,3 +93,9 @@ switchBtn.addEventListener('click', () => {
 });
 
 // Dark Mode End
+
+// Firebase
+import './firebase-app.js';
+import './signup.js';
+import './login.js';
+// Firebase End

@@ -1,0 +1,106 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.singup-backdrop {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(160, 10, 10, 0.6);
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+}
+.singup-container {
+  position: relative;
+  max-width: 370px;
+  width: 100%;
+  padding: 25px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.singup-header {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+.singup-container .singup-form {
+  margin-top: 30px;
+}
+.singup-form .field {
+  margin-bottom: 20px;
+}
+.singup-form .input-field {
+  position: relative;
+  height: 55px;
+  width: 100%;
+}
+.input-field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0 15px;
+  border: 1px solid #d1d1d1;
+}
+.invalid input {
+  border-color: #d93025;
+}
+.input-field .show-hide {
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #919191;
+  cursor: pointer;
+  padding: 3px;
+}
+.field .singup-error {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  color: #d93025;
+  font-size: 13px;
+  display: none;
+}
+.invalid .singup-error {
+  display: flex;
+}
+.singup-error .singup-error-icon {
+  font-family: 'Poppins', sans-serif;
+  margin-right: 6px;
+  font-size: 15px;
+}
+.create-password .singup-error {
+  align-items: flex-start;
+}
+.create-password .singup-error-icon {
+  margin-top: 4px;
+}
+.singup-button {
+  margin: 25px 0 6px;
+}
+.singup-button input {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #4070f4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.singup-button input:hover {
+  background-color: #0e4bf1;
+}
+
+.singup-info-error {
+  color: #dc3545;
+  display: none;
+}
