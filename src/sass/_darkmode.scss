@@ -62,3 +62,12 @@ input:checked + .toggle__slider:before {
 	-ms-transform: translateX(22px);
 	transform: translateX(22px);
 }
+
+body.dark__theme header,
+body.dark__theme footer
+{
+  box-shadow: 0px 1px 58px 12px rgba(255,85,0,0.7),
+            1px 2px 4px 0px rgba(255,85,0,0.7),
+            2px 4px 8px 0px rgba(255,85,0,0.7),
+            2px 4px 16px 0px rgba(255,85,0,0.7);
+}
