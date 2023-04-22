@@ -12,7 +12,6 @@ const perPage = 20;
 // MOST POPULAR MOVIES - START //
 window.onload = async () => {
   const { results, total_pages } = await getPopularMovies(1);
-  console.log(total_pages);
   createGallery(results);
 
   const pagination = new Pagination('pagination', {
@@ -43,10 +42,8 @@ const getMorePictures = async () => {
   const currentPage = document.querySelector('.tui-is-selected');
   const currentPageToDisplay = currentPage.textContent;
   page = currentPageToDisplay;
-  console.log(page);
   const data = await getPopularMovies(page);
   const totalPages = data.total_pages;
-  console.log(totalPages);
   createGallery(data.results);
 };
 
