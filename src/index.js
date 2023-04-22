@@ -1,4 +1,4 @@
-import './JS/loader.js';
+// import './JS/loader.js';
 import {
   getMovies,
   getPopularMovies,
