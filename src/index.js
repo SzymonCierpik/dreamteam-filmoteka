@@ -1,5 +1,5 @@
-import './JS/loader.js';
-import { getMovies, getPopularMovies, getGenresMovies } from './JS/getMovies';
+import './js/loader.js';
+import { getMovies, getPopularMovies, getGenresMovies } from './js/getMovies';
 // MOST POPULAR MOVIES - START //
 window.onload = async () => {
   const data = await getPopularMovies();
