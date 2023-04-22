@@ -1,15 +1,70 @@
 import './JS/loader.js';
-import { getMovies, getPopularMovies, getGenresMovies } from './js/getMovies.js';
+import { getMovies, getPopularMovies, getGenresMovies } from './js/getMovies';
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
+const perPage = 20;
+const inputForm = document.querySelector('[data-input]');
+const buttonForm = document.querySelector('[data-search]');
+const gallery = document.querySelector('.films-cards-set');
+const alert = document.querySelector('#wrongSearch');
+let query = '';
 // MOST POPULAR MOVIES - START //
 window.onload = async () => {
-  const data = await getPopularMovies();
+  const data = await getPopularMovies(1);
+  const totalPages = data.total_pages;
+  console.log(totalPages);
+  createGallery(data.results);
+
+  const container = document.getElementById('pagination');
+  const options = {
+    totalItems: totalPages,
+    itemsPerPage: perPage,
+    visiblePages: 5,
+    page: 1,
+    centerAlign: false,
+    firstItemClassName: 'tui-first-child',
+    lastItemClassName: 'tui-last-child',
+    template: {
+      page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+      currentPage:
+        '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+      moveButton:
+        '<a href="#" class="tui-page-btn tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+        '</a>',
+      disabledMoveButton:
+        '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+        '</span>',
+      moreButton:
+        '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+        '<span class="tui-ico-ellip">...</span>' +
+        '</a>',
+    },
+  };
+  const pagination = new Pagination('pagination', options);
+  pagination.on('afterMove', getMorePictures);
+};
+
+const getMorePictures = async () => {
+  gallery.innerHTML = '';
+  const currentPage = document.querySelector('.tui-is-selected');
+  const currentPageToDisplay = currentPage.textContent;
+  page = currentPageToDisplay;
+  console.log(page);
+  const data = await getPopularMovies(page);
+  const totalPages = data.total_pages;
+  console.log(totalPages);
   createGallery(data.results);
 };
+
 // DATA AND SCOPE SHOULD BE CONFIRMED
 
 // MOST POPULAR MOVIES - END//
 
 //INPUT - START//
+
 const inputForm = document.querySelector('[data-input]');
 const buttonForm = document.querySelector('[data-search]');
 const gallery = document.querySelector('.films-cards-set');
@@ -92,3 +147,4 @@ switchBtn.addEventListener('click', () => {
 });
 
 // Dark Mode End
+

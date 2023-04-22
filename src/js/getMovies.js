@@ -17,8 +17,8 @@ export const getMovies = async (page, query) => {
   return data;
 };
 
-export const getPopularMovies = async () => {
-  const endPoint = API_URL + `trending/movie/week?api_key=${API_KEY}`;
+export const getPopularMovies = async page => {
+  const endPoint = API_URL + `trending/movie/week?api_key=${API_KEY}&language=en-US&page=${page}`;
   const response = await fetch(endPoint);
   const data = await response.json();
   return data;
