@@ -1,5 +1,9 @@
-import './js/loader.js';
-import { getMovies, getPopularMovies, getGenresMovies } from './js/getMovies.js';
+import './JS/loader.js';
+import {
+  getMovies,
+  getPopularMovies,
+  getGenresMovies,
+} from './js/getMovies.js';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
