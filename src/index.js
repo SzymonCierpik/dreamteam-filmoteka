@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import './JS/loader.js';
 import { getMovies, getPopularMovies, getGenresMovies } from './js/getMovies';
 import Pagination from 'tui-pagination';
@@ -66,6 +64,12 @@ const getMorePictures = async () => {
 // MOST POPULAR MOVIES - END//
 
 //INPUT - START//
+
+const inputForm = document.querySelector('[data-input]');
+const buttonForm = document.querySelector('[data-search]');
+const gallery = document.querySelector('.films-cards-set');
+const alert = document.querySelector('#wrongSearch');
+let query = '';
 
 const handleChange = e => (query = e.target.value.trim());
 
@@ -143,4 +147,4 @@ switchBtn.addEventListener('click', () => {
 });
 
 // Dark Mode End
->>>>>>> Stashed changes
+

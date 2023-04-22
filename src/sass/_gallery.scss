@@ -1,0 +1,64 @@
+.films-cards-set {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-inline: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 0 auto;
+}
+.film-card {
+  flex-basis: 100%;
+}
+.film-img {
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0 0 0 / 0.5);
+  transition: transform $transition;
+  &:hover,
+  &:focus {
+    transform: scale(1.01);
+  }
+}
+.info {
+  padding-top: 12px;
+}
+.info-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: $black;
+}
+.info-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: $orange-font;
+}
+
+//TABLET STYLES
+@media screen and (min-width: $tablet) {
+  .films-cards-set {
+    padding-block: 60px;
+    padding-inline: 32px;
+    gap: 32px;
+  }
+  .film-card {
+    flex-basis: calc((100% - 32px) / 2);
+  }
+}
+
+//DESKTOP STYLES
+@media screen and (min-width: $desktop) {
+  .films-cards-set {
+    gap: 16px;
+    justify-content: flex-start;
+    max-width: 1280px;
+  }
+  .film-card {
+    flex-basis: calc((100% - (16px * 2)) / 3);
+  }
+}

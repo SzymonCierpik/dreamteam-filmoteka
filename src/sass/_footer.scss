@@ -1,0 +1,55 @@
+.footer {
+  font-family: $font;
+  font-size: 14px;
+  line-height: 1.14;
+  color: $footer-font;
+  padding-bottom: 29.7px;
+  padding-top: 28.71px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $footer;
+  width: 100%;
+
+  @media screen and (min-width: $tablet) {
+    padding-block: 30px;
+    font-size: 16px;
+    line-height: 1.19;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 28px;
+  }
+}
+
+.container.footer {
+  background-color: $footer;
+}
+
+.footer__wrapper {
+  align-items: center;
+  display: flex;
+  padding-top: 9.9px;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 0px;
+    padding-left: 4px;
+  }
+}
+
+.footer__font {
+  text-decoration: underline;
+  padding-left: 4px;
+  display: inline;
+}
+
+.footer__paragraph1 {
+  padding-right: 5px;
+}
+
+.footer__paragraph2 {
+  padding-left: 5px;
+}
