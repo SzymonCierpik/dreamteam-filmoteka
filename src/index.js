@@ -83,7 +83,7 @@ const createGenreArray = genre_Ids => {
     .splice(0, 3)
     .join(', ');
 };
-
+let page;
 const handleClick = async e => {
   e.preventDefault();
   page = 1;
