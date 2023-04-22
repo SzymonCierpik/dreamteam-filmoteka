@@ -1,4 +1,4 @@
-import "./JS/loader.js";
+import './js/loader.js';
 import { getMovies, getPopularMovies, getGenresMovies } from './js/getMovies';
 // MOST POPULAR MOVIES - START //
 window.onload = async () => {
@@ -92,4 +92,3 @@ switchBtn.addEventListener('click', () => {
 });
 
 // Dark Mode End
-
