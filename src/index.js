@@ -147,4 +147,3 @@ switchBtn.addEventListener('click', () => {
 });
 
 // Dark Mode End
-
