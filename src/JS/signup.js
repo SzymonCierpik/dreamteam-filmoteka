@@ -84,6 +84,5 @@ singupForm.addEventListener('submit', e => {
     !userNameField.classList.contains('invalid')
   ) {
     signUpModal.classList.add('is-hidden');
-    singupForm.reset();
   }
 });

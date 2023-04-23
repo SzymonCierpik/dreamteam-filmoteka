@@ -63,6 +63,5 @@ loginForm.addEventListener('submit', e => {
     !pField.classList.contains('error')
   ) {
     loginModal.classList.add('is-hidden');
-    loginForm.reset();
   }
 });
