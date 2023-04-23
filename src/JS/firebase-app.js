@@ -32,6 +32,7 @@ import {
 } from './signup';
 
 import { loginForm, eInput, pInput, loginError } from './login';
+import { toggleIsHidden, logoutMenu } from './auth-menu';
 
 export const logoutBtn = document.querySelector(
   '.auth-menu-logout__logout-button'
@@ -124,6 +125,8 @@ const monitorAuthState = async () => {
       userId = user.uid;
       userName = user.displayName;
       isLoggedIn = true;
+      singupForm.reset();
+      loginForm.reset();
     } else {
       console.log('sing out');
       isLoggedIn = false;
@@ -137,7 +140,11 @@ const logoutUser = async () => {
   await signOut(auth);
 };
 
-logoutBtn.addEventListener('click', logoutUser);
+logoutBtn.addEventListener('click', () => {
+  logoutUser();
+  logoutMenu.classList.toggle('menu-is-hidden');
+  setTimeout(toggleIsHidden, 300);
+});
 
 const addToWatched = async movieId => {
   await updateDoc(doc(db, 'users', `${userId}`), {
