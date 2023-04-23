@@ -1,0 +1,143 @@
+.menu {
+  overflow: hidden;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  border-radius: 5px;
+  width: calc(100% - 40px);
+}
+
+.auth-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px;
+  padding-bottom: 20px;
+  background-color: #f2a987;
+  transition: transform 300ms;
+
+  &__header {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__signup-button {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 5px 10px 15px -5px rgba(0, 0, 0, 1);
+    margin-bottom: 10px;
+    background-color: #4169e1;
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #3d428b;
+    }
+  }
+
+  &__login-button {
+    width: 150px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 5px 10px 15px -5px rgba(0, 0, 0, 1);
+    margin-top: 7px;
+    font-size: 18px;
+    background-color: #4169e1;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #3d428b;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+.auth-menu-logout {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px;
+  background-color: #f2a987;
+
+  &__header-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 10px;
+  }
+
+  &__header {
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+
+  &__user-name {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__logout-button {
+    width: 200px;
+    height: 50px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 5px 10px 15px -5px rgba(0, 0, 0, 1);
+    margin-top: 7px;
+    font-size: 18px;
+    background-color: #4169e1;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #3d428b;
+    }
+  }
+}
+
+.menu-is-hidden {
+  transform: translateX(120%);
+}
+
+@media screen and (min-width: $tablet) {
+  .menu {
+    right: 30px;
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .menu {
+    right: 30px;
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .menu {
+    right: 80px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .menu {
+    right: 150px;
+  }
+}
