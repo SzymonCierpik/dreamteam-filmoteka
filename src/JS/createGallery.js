@@ -32,6 +32,7 @@ const createGenreArray = genre_Ids => {
 
 const handleClick = async e => {
   e.preventDefault();
+  let page;
   page = 1;
   clearGallery();
   alert.innerHTML = '';
