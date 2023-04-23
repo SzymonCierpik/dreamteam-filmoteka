@@ -1,6 +1,6 @@
-import './js/loader.js';
-import './js/renderingPopularMovies.js';
-import './js/renderingMoviesByKey.js';
+import './JS/loader.js';
+import './JS/renderingPopularMovies.js';
+import './JS/renderingMoviesByKey.js';
 
 // Dark Mode
 
