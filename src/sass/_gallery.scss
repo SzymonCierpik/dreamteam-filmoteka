@@ -13,6 +13,12 @@
 }
 .film-img {
   border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0 0 0 / 0.5);
+  transition: transform $transition;
+  &:hover,
+  &:focus {
+    transform: scale(1.01);
+  }
 }
 .info {
   padding-top: 12px;
