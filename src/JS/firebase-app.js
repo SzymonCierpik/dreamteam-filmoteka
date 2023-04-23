@@ -33,6 +33,10 @@ import {
 
 import { loginForm, eInput, pInput, loginError } from './login';
 
+export const logoutBtn = document.querySelector(
+  '.auth-menu-logout__logout-button'
+);
+
 const firebaseConfig = {
   apiKey: 'AIzaSyDWPLJhw8gzRksSLpE290fp-GQpT7FpHaY',
   authDomain: 'moviedreamteam-filmoteka.firebaseapp.com',
@@ -129,9 +133,11 @@ const monitorAuthState = async () => {
 
 monitorAuthState();
 
-const logout = async () => {
+const logoutUser = async () => {
   await signOut(auth);
 };
+
+logoutBtn.addEventListener('click', logoutUser);
 
 const addToWatched = async movieId => {
   await updateDoc(doc(db, 'users', `${userId}`), {

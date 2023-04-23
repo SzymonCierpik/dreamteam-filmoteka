@@ -5,6 +5,7 @@ export const loginForm = document.querySelector('.login-form'),
   pInput = pField.querySelector('input'),
   loginError = document.querySelector('.login-info-error');
 
+import { loginModal } from './auth-menu';
 ////Form Validtion
 loginForm.addEventListener('submit', e => {
   e.preventDefault(); //preventing from form submitting
@@ -61,6 +62,7 @@ loginForm.addEventListener('submit', e => {
     !eField.classList.contains('error') &&
     !pField.classList.contains('error')
   ) {
-    window.location.href = loginForm.getAttribute('action'); //redirecting user to the specified url which is inside action attribute of form tag
+    loginModal.classList.add('is-hidden');
+    loginForm.reset();
   }
 });

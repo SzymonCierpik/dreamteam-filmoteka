@@ -9,6 +9,7 @@ export const singupForm = document.querySelector('.singup-form'),
   cPassInput = document.querySelector('.cPassword'),
   singupError = document.querySelector('.singup-info-error');
 
+import { signUpModal } from './auth-menu';
 // Email Validtion
 function checkEmail() {
   const emaiPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
@@ -82,6 +83,7 @@ singupForm.addEventListener('submit', e => {
     !cPassField.classList.contains('invalid') &&
     !userNameField.classList.contains('invalid')
   ) {
-    location.href = singupForm.getAttribute('action');
+    signUpModal.classList.add('is-hidden');
+    singupForm.reset();
   }
 });
