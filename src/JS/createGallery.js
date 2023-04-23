@@ -40,6 +40,7 @@ const handleClick = async e => {
 export const createGallery = data => {
   const movies = data
     .map(movie => {
+      let src;
       const genresTitle = createGenreArray(movie.genre_ids);
       if (movie.poster_path === null) {
         src = `https://www.more-kino.info/drama/hide-2/hide-2.jpg`;
