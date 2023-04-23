@@ -52,8 +52,8 @@ const db = getFirestore(app);
 ///connectAuthEmulator(auth, 'http://localhost:9099');
 
 let userId;
-let userName;
-let isLoggedIn;
+export let userName;
+export let isLoggedIn;
 
 const LoginEmailPassword = async () => {
   const loginEmail = eInput.value;

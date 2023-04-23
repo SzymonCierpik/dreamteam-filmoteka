@@ -137,7 +137,8 @@ switchBtn.addEventListener('click', () => {
 // Dark Mode End
 
 // Firebase
-import './firebase-app.js';
-import './signup.js';
-import './login.js';
+import './JS/auth-menu.js';
+import './JS/firebase-app.js';
+import './JS/signup.js';
+import './JS/login.js';
 // Firebase End
