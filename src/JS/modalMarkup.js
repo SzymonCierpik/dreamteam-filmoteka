@@ -1,4 +1,4 @@
-function renderMovie(movieData) {  const markup = movie    .map(      ({         original_title,  vote_average,        popularity,     genres,    overwiev     }) => {        return ` <div class="backdrop is-hidden">
+function renderModal(movieData) {  const markup = movie    .map(      ({         original_title,  vote_average,        popularity,     genres,    overwiev     }) => {        return ` <div class="backdrop is-hidden">
 <div class="modal-wrapper">
   <button  type="button"class="modal__cross-btn">
     <svg class="modal__cross-btn-icon" width="30" height="30">

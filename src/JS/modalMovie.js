@@ -1,6 +1,6 @@
 
 import { onCloseModal } from './open-and-close-modal';
-
+import { renderModal } from './modalMarkup'
 
 
 // funkcja otwierająca modal
