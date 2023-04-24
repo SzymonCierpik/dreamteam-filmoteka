@@ -25,13 +25,19 @@
   justify-content: space-between;
   align-items: center;
   display: flex;
-  text-decoration: none;
 }
-.header-nav__svg {
+.header-logo {
   stroke: $white;
   fill: none;
   outline: none;
   transition: stroke $transition;
+  &:hover,
+  &:focus {
+    stroke: $orange-font;
+    fill: none;
+  }
+}
+.header-nav__svg {
   -webkit-animation: pulsing 4s infinite;
   animation: pulsing 4s infinite;
 }
@@ -64,18 +70,6 @@
     transform: scale(1, 1);
   }
 }
-.header-logo:hover > svg {
-  stroke: $orange-font;
-  fill: none;
-}
-
-.header-logo > span {
-  color: $white;
-  transition: color $transition;
-}
-.header-logo:hover > span {
-  color: $orange-font;
-}
 
 .header-nav__name {
   display: none;
@@ -100,11 +94,12 @@
   position: relative;
   display: flex;
   align-items: center;
-  transition: scale $transition;
+  transition: transform $transition, color $transition;
   &:hover,
   &:focus {
+    outline: none;
     color: $orange-font;
-    scale: 1.05;
+    transform: translatey(-1);
   }
 }
 
@@ -120,12 +115,11 @@
 .user-icon {
   stroke: $white;
   fill: $white;
-  transition: scale $transition;
+  transition: fill $transition, stroke $transition;
   &:hover,
   &:focus {
     stroke: $orange-font;
     fill: $orange-font;
-    scale: 1.1;
   }
 }
 .header-search {
@@ -208,18 +202,23 @@
   .container-header {
     padding: 0 32px;
   }
-
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $white;
+    transition: color $transition, stroke $transition;
+    &:hover,
+    &:focus {
+      color: $orange-font;
+    }
+  }
   .header-nav__name {
     display: inline-block;
-    margin: 0px;
-    color: $white;
     font-size: 30px;
     font-weight: 500;
     line-height: 1.16;
     align-items: center;
-  }
-  .header-nav__svg {
-    margin-right: 10px;
   }
   .header-search {
     padding-top: 40px;
