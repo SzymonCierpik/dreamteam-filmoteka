@@ -1,9 +1,10 @@
 .toggle__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 7px;
   position: absolute;
   bottom: 9px;
   right: 20px;
-  line-height: 29px;
-  align-items: center;
 }
 
 body.dark__theme {
@@ -148,3 +149,10 @@ body.dark__theme header {
 //             2px 4px 8px 0px rgba(255,85,0,0.7),
 //             2px 4px 16px 0px rgba(255,85,0,0.7);
 // }
+
+@media screen and (min-width: $tablet) {
+  .toggle__wrapper {
+    bottom: 9px;
+    right: 32px;
+  }
+}

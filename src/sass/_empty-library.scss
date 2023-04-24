@@ -19,7 +19,7 @@
 .empty__img {
   padding: 0 10px 10px 10px;
 }
-@media (min-width: $tablet) {
+@media screen and (min-width: $tablet) {
   .empty__text1 {
     padding: 10px;
     font-size: 2rem;
@@ -29,7 +29,7 @@
     font-size: 24px;
   }
 
-  img {
+  .empty__img {
     padding-bottom: 10px;
     width: 100%;
     height: 100%;
