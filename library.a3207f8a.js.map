@@ -1,0 +1,1 @@
+{"mappings":"gfAAAA,EAAA,S","sources":["src/library.js"],"sourcesContent":["import './JS/loader.js';\nimport './JS/darkmode.js';\n\n// Firebase\nimport './JS/auth-menu.js';\nimport './JS/firebase-app.js';\nimport './JS/signup.js';\nimport './JS/login.js';\n// Firebase End\n"],"names":["parcelRequire"],"version":3,"file":"library.a3207f8a.js.map"}
