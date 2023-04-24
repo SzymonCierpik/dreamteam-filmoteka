@@ -27,7 +27,7 @@
   display: flex;
   text-decoration: none;
 }
-.header-logo > svg {
+.header-nav__svg {
   stroke: $white;
   fill: none;
   outline: none;
@@ -100,11 +100,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  transition: all $transition;
+  transition: scale $transition;
   &:hover,
   &:focus {
     color: $orange-font;
-    scale: 1.2;
+    scale: 1.05;
   }
 }
 
@@ -120,12 +120,12 @@
 .user-icon {
   stroke: $white;
   fill: $white;
-  transition: all $transition;
+  transition: scale $transition;
   &:hover,
   &:focus {
     stroke: $orange-font;
     fill: $orange-font;
-    scale: 1.2;
+    scale: 1.1;
   }
 }
 .header-search {
@@ -173,7 +173,7 @@
   stroke: $white;
   fill: none;
   outline: none;
-  transition: stroke $transition;
+  transition: stroke $transition, scale $transition;
   &:hover {
     stroke: $orange-font;
     scale: 1.5;
@@ -231,11 +231,6 @@
   }
   .header-search__text {
     max-width: 394px;
-  }
-  .toggle__wrapper {
-    position: absolute;
-    bottom: 9px;
-    right: 32px;
   }
 }
 

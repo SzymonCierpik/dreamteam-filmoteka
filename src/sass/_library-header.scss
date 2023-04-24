@@ -38,6 +38,10 @@
     fill: none;
   }
 }
+.logo__icon {
+  -webkit-animation: pulsing 4s infinite;
+  animation: pulsing 4s infinite;
+}
 .logo__text {
   display: none;
 }
@@ -48,11 +52,12 @@
   font-size: 12px;
   line-height: 1.16;
   text-transform: uppercase;
-  transition: color $transition;
+  transition: color $transition, scale $transition;
   &:hover,
   &:focus {
     outline: none;
     color: $orange-font;
+    scale: 1.05;
     // &::after {
     //   background: $orange-font;
     // }
