@@ -1,3 +1,5 @@
+import { openModal } from "./modalMovie";
+
 function toggleModal() {
   modal.classList.toggle("is-hidden");
   modal.classList.toggle("modal-animation")
@@ -28,6 +30,6 @@ function onCloseModal() {
   }
 
 // Trzeba nazwy guzikow odpowiednie przepisac ja dalem tutaj przykladowe
-openModalBtn.addEventListener("click", toggleModal);
+openModalBtn.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', onCloseModal);
 divBackdrop.addEventListener('click', onBackDropClick);
