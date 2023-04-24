@@ -38,6 +38,16 @@
   line-height: 1.2;
   color: $orange-font;
 }
+.info-rating {
+  background: $orange-font;
+  border-radius: 5px;
+  padding: 3px 11px 3px 11px;
+  color: $white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+}
 
 //TABLET STYLES
 @media screen and (min-width: $tablet) {
