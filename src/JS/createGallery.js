@@ -55,7 +55,7 @@ export const createGallery = data => {
         <img class="film-img" src="${src}" alt="${movie.title}" loading="lazy" /> 
         <div class="info">
         <p class="info-title">${movie.original_title}</p>
-        <p class="info-text">${genresTitle} | ${movie.release_date} ${movie.vote_average}</p>
+        <p class="info-text">${genresTitle} | ${movie.release_date} <span class="info-rating">${movie.vote_average}</span></p>
         </div>
         </a>
         </div>
