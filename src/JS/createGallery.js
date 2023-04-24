@@ -10,11 +10,8 @@ const handleChange = e => (query = e.target.value.trim());
 
 const genresMovieIds = () => {
   getGenresMovies();
-  // console.log('alert: ', alert);
   const genreIdsJson = sessionStorage.getItem('genresIds');
-  // console.log(genreIdsJson);
   const genreIdsParse = JSON.parse(genreIdsJson);
-  // console.log(genreIdsParse);
   return genreIdsParse;
 };
 const genreMovie = genresMovieIds();
@@ -32,6 +29,7 @@ const createGenreArray = genre_Ids => {
 
 const handleClick = async e => {
   e.preventDefault();
+  let page;
   page = 1;
   clearGallery();
   alert.innerHTML = '';
@@ -47,14 +45,15 @@ export const createGallery = data => {
       } else {
         src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
       }
-
+      const stringVote = String(movie.vote_average).slice(0, 3);
+      
       return `
         <div class="film-card">
         <a href=https://image.tmdb.org/t/p/original/${movie.poster_path}>
         <img class="film-img" src="${src}" alt="${movie.title}" loading="lazy" /> 
         <div class="info">
         <p class="info-title">${movie.original_title}</p>
-        <p class="info-text">${genresTitle} | ${movie.release_date} ${movie.vote_average}</p>
+        <p class="info-text">${genresTitle} | ${movie.release_date.substring(0,4)} <span class="info-rating">${stringVote}</span></p>
         </div>
         </a>
         </div>
