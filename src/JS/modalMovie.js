@@ -1,5 +1,5 @@
 
-import '../JS/open-and-close-modal';
+import './open-and-close-modal';
 import { renderModal } from './modalMarkup'
 
 
