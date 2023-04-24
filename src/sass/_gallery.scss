@@ -32,6 +32,9 @@
   color: $black;
 }
 .info-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -41,7 +44,7 @@
 .info-rating {
   background: $orange-font;
   border-radius: 5px;
-  padding: 3px 11px 3px 11px;
+  padding: 3px 11px;
   color: $white;
   font-style: normal;
   font-weight: 500;
