@@ -38,10 +38,6 @@
     fill: none;
   }
 }
-.logo__icon {
-  -webkit-animation: pulsing 4s infinite;
-  animation: pulsing 4s infinite;
-}
 .logo__text {
   display: none;
 }
@@ -52,12 +48,14 @@
   font-size: 12px;
   line-height: 1.16;
   text-transform: uppercase;
-  transition: color $transition, transform $transition;
+  transition: color $transition;
   &:hover,
   &:focus {
     outline: none;
     color: $orange-font;
-    transform: translatey(-1);
+    // &::after {
+    //   background: $orange-font;
+    // }
   }
 }
 .nav__item {
@@ -95,7 +93,7 @@
   &:hover,
   &:focus {
     background: $orange-button;
-    border: 1px solid transparent; //if choose 'none' then buttons bounces when hovered
+    border: none;
     outline: none;
     box-shadow: (
       0px 4px 4px rgba(0 0 0 / 0.25),

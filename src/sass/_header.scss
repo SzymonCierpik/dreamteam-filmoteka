@@ -25,19 +25,13 @@
   justify-content: space-between;
   align-items: center;
   display: flex;
+  text-decoration: none;
 }
-.header-logo {
+.header-logo > svg {
   stroke: $white;
   fill: none;
   outline: none;
   transition: stroke $transition;
-  &:hover,
-  &:focus {
-    stroke: $orange-font;
-    fill: none;
-  }
-}
-.header-nav__svg {
   -webkit-animation: pulsing 4s infinite;
   animation: pulsing 4s infinite;
 }
@@ -70,6 +64,18 @@
     transform: scale(1, 1);
   }
 }
+.header-logo:hover > svg {
+  stroke: $orange-font;
+  fill: none;
+}
+
+.header-logo > span {
+  color: $white;
+  transition: color $transition;
+}
+.header-logo:hover > span {
+  color: $orange-font;
+}
 
 .header-nav__name {
   display: none;
@@ -94,12 +100,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  transition: transform $transition, color $transition;
+  transition: all $transition;
   &:hover,
   &:focus {
-    outline: none;
     color: $orange-font;
-    transform: translatey(-1);
+    scale: 1.2;
   }
 }
 
@@ -115,11 +120,12 @@
 .user-icon {
   stroke: $white;
   fill: $white;
-  transition: fill $transition, stroke $transition;
+  transition: all $transition;
   &:hover,
   &:focus {
     stroke: $orange-font;
     fill: $orange-font;
+    scale: 1.2;
   }
 }
 .header-search {
@@ -167,7 +173,7 @@
   stroke: $white;
   fill: none;
   outline: none;
-  transition: stroke $transition, scale $transition;
+  transition: stroke $transition;
   &:hover {
     stroke: $orange-font;
     scale: 1.5;
@@ -202,23 +208,18 @@
   .container-header {
     padding: 0 32px;
   }
-  .header-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: $white;
-    transition: color $transition, stroke $transition;
-    &:hover,
-    &:focus {
-      color: $orange-font;
-    }
-  }
+
   .header-nav__name {
     display: inline-block;
+    margin: 0px;
+    color: $white;
     font-size: 30px;
     font-weight: 500;
     line-height: 1.16;
     align-items: center;
+  }
+  .header-nav__svg {
+    margin-right: 10px;
   }
   .header-search {
     padding-top: 40px;
@@ -230,6 +231,11 @@
   }
   .header-search__text {
     max-width: 394px;
+  }
+  .toggle__wrapper {
+    position: absolute;
+    bottom: 9px;
+    right: 32px;
   }
 }
 
