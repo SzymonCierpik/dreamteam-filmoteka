@@ -33,6 +33,12 @@ import {
 
 import { loginForm, eInput, pInput, loginError } from './login';
 import { toggleIsHidden, logoutMenu } from './auth-menu';
+import {
+  getGuestLibrary,
+  guestLibrary,
+  addToQueueForGuest,
+  addToWatchedForGuest,
+} from './guestLibrary';
 
 export const logoutBtn = document.querySelector(
   '.auth-menu-logout__logout-button'
@@ -130,6 +136,16 @@ const monitorAuthState = async () => {
     } else {
       console.log('sing out');
       isLoggedIn = false;
+      getGuestLibrary();
+      if (guestLibrary === null) {
+        localStorage.setItem(
+          'guest',
+          JSON.stringify({
+            watched: [],
+            queue: [],
+          })
+        );
+      }
     }
   });
 };
@@ -146,19 +162,19 @@ logoutBtn.addEventListener('click', () => {
   setTimeout(toggleIsHidden, 300);
 });
 
-const addToWatched = async movieId => {
+const addToWatchedForUser = async movieId => {
   await updateDoc(doc(db, 'users', `${userId}`), {
     watched: arrayUnion(`${movieId}`),
   });
 };
 
-const addToQueue = async movieId => {
+const addToQueueForUser = async movieId => {
   await updateDoc(doc(db, 'users', `${userId}`), {
     queue: arrayUnion(`${movieId}`),
   });
 };
 
-const getLibrary = async () => {
+const getUserLibrary = async () => {
   const docSnap = await getDoc(doc(db, 'users', `${userId}`));
   if (docSnap.exists()) {
     console.log('Document data:', docSnap.data());
@@ -167,3 +183,27 @@ const getLibrary = async () => {
     console.log('No such document!');
   }
 };
+
+function addToWatched(movieId) {
+  if (isLoggedIn) {
+    addToWatchedForUser(movieId);
+  } else {
+    addToWatchedForGuest(movieId);
+  }
+}
+
+function addToQueue(movieId) {
+  if (isLoggedIn) {
+    addToQueueForUser(movieId);
+  } else {
+    addToQueueForGuest(movieId);
+  }
+}
+
+function getLibrary() {
+  if (isLoggedIn) {
+    getUserLibrary();
+  } else {
+    getGuestLibrary();
+  }
+}
