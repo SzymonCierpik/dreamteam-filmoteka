@@ -2,7 +2,7 @@ const openSignUpBtn = document.querySelector('.auth-menu__signup-button');
 const openLoginBtn = document.querySelector('.auth-menu__login-button');
 const authMenu = document.querySelector('.menu');
 const signUpAndLoginMenu = document.querySelector('.auth-menu');
-const logoutMenu = document.querySelector('.auth-menu-logout');
+export const logoutMenu = document.querySelector('.auth-menu-logout');
 const userNameDisplay = document.querySelector('.auth-menu-logout__user-name');
 const authMenuOpenBtn = document.querySelector('.auth-menu-open-btn');
 export const signUpModal = document.querySelector('.singup-backdrop');
@@ -10,7 +10,7 @@ export const loginModal = document.querySelector('.login-backdrop');
 
 import { isLoggedIn, userName } from './firebase-app';
 
-function toggleIsHidden() {
+export function toggleIsHidden() {
   authMenu.classList.toggle('is-hidden');
 }
 
