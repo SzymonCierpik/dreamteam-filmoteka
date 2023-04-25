@@ -49,8 +49,8 @@ export const createGallery = data => {
       
       return `
         <div class="film-card">
-        <div href=https://image.tmdb.org/t/p/original/${movie.poster_path}>
-        <img data-id="${movie.id} class="film-img" src="${src}" alt="${movie.title}" loading="lazy" /> 
+        <div>
+        <img class="film-img" src="${src}" alt="${movie.title}" loading="lazy" /> 
         <div class="info">
         <p class="info-title">${movie.original_title}</p>
         <p class="info-text">${genresTitle} | ${movie.release_date.substring(0,4)} <span class="info-rating">${stringVote}</span></p>

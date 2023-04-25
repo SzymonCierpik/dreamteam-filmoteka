@@ -1,5 +1,6 @@
 
-function crenderMarkup({
+
+function renderMarkup({
   popularity,
   poster_path,
   genres,
@@ -12,9 +13,9 @@ function crenderMarkup({
   if (!poster_path) {
     poster = 'https://live.staticflickr.com/65535/52673964597_7ac974f3b4_k.jpg';
   }
-  const markup=`
+  const markup=
 
-  <div class="movie-info-content">
+  `<div class="movie-info-content">
       <img class="movie-detail__image" src="https://image.tmdb.org/t/p/w500//${
         e.poster_path
       }" />
@@ -51,11 +52,10 @@ function crenderMarkup({
 </div>
 </div>
 </div>
-</div>`;      
-
+</div>`
 return backdrop.innerHTML('beforeend', markup);
 
 }
+ 
   
-  
-  export { renderModal };
+  export { renderModal }; 
