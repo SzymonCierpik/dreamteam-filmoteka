@@ -1,35 +1,35 @@
-import { openModal } from "./modalMovie";
+// import { openModal } from "./modalMovie";
 
-function toggleModal() {
-  modal.classList.toggle("is-hidden");
-  modal.classList.toggle("modal-animation")
-}
+// function toggleModal() {
+//   modal.classList.toggle("is-hidden");
+//   modal.classList.toggle("modal-animation")
+// }
 
 
 
-function onCloseModal() {
-    document.body.classList.remove('is-hidden');
+// function onCloseModal() {
+//     document.body.classList.remove('is-hidden');
   
-    modal.innerHTML = '';
+//     modal.innerHTML = '';
    
-  }
+//   }
   
-  function onBackDropClick(event) {
-    if (event.currentTarget === event.target) {
-      onCloseModal();
-    }
-  }
+//   function onBackDropClick(event) {
+//     if (event.currentTarget === event.target) {
+//       onCloseModal();
+//     }
+//   }
   
-  function onEscKeyPress(event) {
-    if (event.code !== 'Escape') {
-      return;
-    }
+//   function onEscKeyPress(event) {
+//     if (event.code !== 'Escape') {
+//       return;
+//     }
   
-    window.removeEventListener('keydown', onEscKeyPress);
-    onCloseModal();
-  }
+//     window.removeEventListener('keydown', onEscKeyPress);
+//     onCloseModal();
+//   }
 
-// Trzeba nazwy guzikow odpowiednie przepisac ja dalem tutaj przykladowe
-openModalBtn.addEventListener('click', openModal);
-closeModalBtn.addEventListener('click', onCloseModal);
-divBackdrop.addEventListener('click', onBackDropClick);
+// // Trzeba nazwy guzikow odpowiednie przepisac ja dalem tutaj przykladowe
+// openModalBtn.addEventListener('click', openModal);
+// closeModalBtn.addEventListener('click', onCloseModal);
+// divBackdrop.addEventListener('click', onBackDropClick);
