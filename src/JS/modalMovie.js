@@ -1,10 +1,11 @@
-
 import './open-and-close-modal';
 import { renderModal } from './modalMarkup'
 
 
+
+
 // funkcja otwierająca moda
-(() => {
+// (() => {
   const refs = {
     openModalBtn: document.querySelector('.films-cards-set'),
     closeModalBtn: document.querySelector('.modal__cross-btn'),
@@ -17,10 +18,18 @@ import { renderModal } from './modalMarkup'
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden');
   }
-})();
+// })();
+const openModal = e => {
+ 
+  if (!e.target.classList.contains('film-card')) {
+    // zakanczamy dzialanie funkcji, kliknelismy nie w karte
+    return;
+  }
 
+//   // kliknielismy w karte, dzialamy dalej
 
-
+//   // otrzymujemy id z data-id atrybutu, ktory zostal dodany wczesniej do karty
+  const id = e.target.dataset.id;
   // pobranie id filmu z atrybutu "data-id" klikniętego elementu
   const movieId = e.target.closest('.film-card').getAttribute('data-id');
   fetchMovieById(movieId)
@@ -30,24 +39,10 @@ import { renderModal } from './modalMarkup'
       // dodanie elementu backdrop do ciała dokumentu
       document.body.appendChild(backdrop);
 
-      // blokowanie scrollowania strony
-      const currentScrollY = window.scrollY;
-      document.body.style.top = `-${currentScrollY}px`;
-      document.body.style.position = 'fixed';
-
-         
-     
-        // odblokowanie scrollowania strony
-        document.body.style.position = '';
-        document.body.style.top = '';
-        window.scrollTo(0, currentScrollY);
-        closeModal();
-      ;
-    })
+          })
     .catch(error => {
       console.error(error);
     });
-
 
 const fetchMovieById = id => {
   const API_URL = 'https://api.themoviedb.org/3/';
@@ -75,4 +70,7 @@ const fetchMovieById = id => {
   };
 
 
+// szukamy nasza liste w DOM
+const galleryListDOM = document.querySelector(".films-cards-set") // tu powinna by klasa calej galerii/listy
+}
 export { openModal };
