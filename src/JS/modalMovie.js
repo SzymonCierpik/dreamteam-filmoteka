@@ -4,26 +4,25 @@ import { renderModal } from './modalMarkup'
 
 
 // funkcja otwierająca moda
+(() => {
+  const refs = {
+    openModalBtn: document.querySelector('.films-cards-set'),
+    closeModalBtn: document.querySelector('.modal__cross-btn'),
+      modal: document.querySelector('.backdrop'),
+  };
 
-  const openModal = e => {
-    isModalOpen = true;
-    currentScrollY = window.scrollY;
-    // przerywa funkcję, jeśli zdarzenie nie występuje na elemencie z klasą "movie-card".
-    if (!e.target.closest('.film__card')) {
-      return;
-    }
-   
-    const backdrop = document.createElement('div');
-    backdrop.classList.add('backdrop');
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
 
-
-
-
+  function toggleModal() {
+    refs.modal.classList.toggle('is-hidden');
+  }
+})();
 
 
 
   // pobranie id filmu z atrybutu "data-id" klikniętego elementu
-  const movieId = e.target.closest('.film__card').getAttribute('data-id');
+  const movieId = e.target.closest('.film-card').getAttribute('data-id');
   fetchMovieById(movieId)
     .then(movieData => {
       backdrop.innerHTML = renderModal(movieData);
@@ -48,7 +47,7 @@ import { renderModal } from './modalMarkup'
     .catch(error => {
       console.error(error);
     });
-};
+
 
 const fetchMovieById = id => {
   const API_URL = 'https://api.themoviedb.org/3/';
