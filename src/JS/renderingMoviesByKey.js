@@ -13,18 +13,24 @@ function getMoviesById(e) {
   e.preventDefault();
   query = inputForm.value.trim();
   let page = 1;
-  getByKey(query, page).then(data => {
-    gallery.insertAdjacentHTML('beforeend', createGallery(data.results));
+   getByKey(query, page).then(data => {
+    
+    if (!data.results < 1) {
+      gallery.insertAdjacentHTML('beforeend', createGallery(data.results));
 
-    const pagination = createPagination(data.total_results, data.total_pages);
-    pagination.on('afterMove', ({ page }) => {
-      gallery.innerHTML = '';
-      getByKey(query, page).then(data => {
-        createGallery(data.results);
+      const pagination = createPagination(data.total_results, data.total_pages);
+      pagination.on('afterMove', ({ page }) => {
+        gallery.innerHTML = '';
+        getByKey(query, page).then(data => {
+          createGallery(data.results);
+        });
       });
-    });
+    }
+    container.classList.add('is-hidden');
+    return;
   });
 }
+
 
 /* function getMoviesById(e) {
   e.preventDefault();

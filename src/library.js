@@ -1,5 +1,6 @@
 import './JS/loader.js';
 import './JS/darkmode.js';
+import './JS/video.js';
 
 // Firebase
 import './JS/auth-menu.js';

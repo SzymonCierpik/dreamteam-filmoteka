@@ -49,13 +49,13 @@ export const createGallery = data => {
       
       return `
         <div class="film-card">
-        <a href=https://image.tmdb.org/t/p/original/${movie.poster_path}>
+        <div>
         <img class="film-img" src="${src}" alt="${movie.title}" loading="lazy" /> 
         <div class="info">
         <p class="info-title">${movie.original_title}</p>
         <p class="info-text">${genresTitle} | ${movie.release_date.substring(0,4)} <span class="info-rating">${stringVote}</span></p>
         </div>
-        </a>
+        </div>
         </div>
         `; // Class name and other should be update
     })
