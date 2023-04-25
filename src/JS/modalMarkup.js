@@ -61,4 +61,4 @@ function renderMarkup({
   return markup;
 }
 
-export { renderModal };
+export { renderMarkup };

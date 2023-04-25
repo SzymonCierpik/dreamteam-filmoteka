@@ -1,5 +1,6 @@
 import './open-and-close-modal';
-import { renderModal } from './modalMarkup';
+import { renderMarkup } from './modalMarkup';
+import axios from 'axios';
 
 // funkcja otwierająca moda
 // (() => {
@@ -9,12 +10,13 @@ const refs = {
   modal: document.querySelector('.backdrop'),
 };
 
+const backdrop = document.querySelector('.backdrop');
+
 refs.openModalBtn.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', toggleModal);
 
-function toggleModal(e) {
+function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
-  openModal(e);
 }
 // })();
 const openModal = e => {
@@ -29,26 +31,8 @@ const openModal = e => {
   const id = e.currentTarget.dataset.id;
   // pobranie id filmu z atrybutu "data-id" klikniętego elementu
   const movieId = e.currentTarget.closest('.film-card').getAttribute('data-id');
-  const backdrop = document.querySelector('.backdrop');
 
   fetchMovieById(movieId)
-    .then(response => {
-      console.log(response);
-      if (!response.ok) {
-        if (response.status === 429) {
-          // Too Many Requests
-          console.error('Error: Too many requests to API.');
-        } else {
-          console.error(
-            'Error: Failed to fetch data from API. Status code:',
-            response.status
-          );
-        }
-        throw new Error(response.status);
-      }
-      const movieData = response.json();
-      return movieData;
-    })
     .then(movieData => {
       backdrop.innerHTML = renderModal(movieData);
 
@@ -59,17 +43,19 @@ const openModal = e => {
       throw new Error(error);
     });
 
-  const fetchMovieById = async id => {
-    const API_URL = 'https://api.themoviedb.org/3/movie/';
-    const API_KEY = 'b118f38ec77100db6763b4cc83604589';
-    const FETCH_URL = `${API_URL}` + `${id}` + '?api_key=' + `${API_KEY}`;
-
-    const response = await fetch(FETCH_URL);
-    return response;
-  };
-
   // szukamy nasza liste w DOM
   const galleryListDOM = document.querySelector('.films-cards-set'); // tu powinna by klasa calej galerii/listy
 };
+
+async function fetchMovieById(id) {
+  const API_URL = 'https://api.themoviedb.org/3/movie/';
+  const API_KEY = 'b118f38ec77100db6763b4cc83604589';
+  const FETCH_URL = `${API_URL}` + `${id}` + '?api_key=' + `${API_KEY}`;
+
+  await axios.get(FETCH_URL).then(response => {
+    console.log(response.data);
+    return response.data;
+  });
+}
 
 export { openModal };
