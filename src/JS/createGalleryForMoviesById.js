@@ -19,7 +19,7 @@ export const createGalleryId = data => {
         <img class="film-img" src="${src}" alt="${movie.title}" loading="lazy" /> 
         <div class="info">
         <p class="info-title">${movie.original_title}</p>
-        <p class="info-text">${movie.genres.name} | ${movie.release_date} <span class="info-rating">${movie.vote_average}</span></p>
+        <p class="info-text">${movie.genres.map(genre => genre.name).join(" , ")} | ${movie.release_date} <span class="info-rating">${movie.vote_average}</span></p>
         </div>
         </a>
         </div>
