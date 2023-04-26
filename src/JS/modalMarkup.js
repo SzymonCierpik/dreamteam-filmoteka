@@ -10,7 +10,7 @@ function renderMarkup({
   id,
   vote_average,
   vote_count,
-  genresTitle,
+  genres,
 }) {
   if (!poster_path) {
     poster = 'https://live.staticflickr.com/65535/52673964597_7ac974f3b4_k.jpg';
