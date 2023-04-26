@@ -47,9 +47,3 @@ libraryQueueBtn.addEventListener('click', () => {
     });
   }
 });
-
-window.onload = () => {
-  getArrayofFilms().then(data => {
-    gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
-  });
-};
