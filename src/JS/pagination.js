@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import '../sass/_pagination.scss';
+import '../pagination.css';
 import getPopular from './getPopularMovies';
 const TUI_VISIBLE_PAGES = 5;
 
