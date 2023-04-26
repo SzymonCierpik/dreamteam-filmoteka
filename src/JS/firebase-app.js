@@ -197,7 +197,6 @@ const getUserLibrary = async () => {
   const docSnap = await getDoc(doc(db, 'users', `${userId}`));
   if (docSnap.exists()) {
     console.log('Document data:', docSnap.data());
-    library = docSnap.data();
   } else {
     // docSnap.data() will be undefined in this case
     console.log('No such document!');
