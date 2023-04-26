@@ -1,36 +1,88 @@
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.75s, visibility 0.75s;
-  background-color: $footer;
-}
-
 .loader-hidden {
   opacity: 0;
   visibility: hidden;
 }
 
-.loader::after {
-  content: '';
-  width: 75px;
-  height: 75px;
-  border: 15px solid $gray;
-  border-top-color: $orange-button;
-  border-radius: 50%;
-  animation: loading 0.75s ease infinite;
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  font-family: $font;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: opacity 0.75s, visibility 0.75s;
+  background-color: $footer;
 }
 
-@keyframes loading {
-  from {
-    transform: rotate(0turn);
+@keyframes animateBackgroundC0olor {
+  0% {
+    filter: hue-rotate(0deg);
   }
-  to {
-    transform: rotate(1turn);
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.loader__wrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.loader__wrapper .loader__blocks {
+  position: absolute;
+  width: 8px;
+  height: 50px;
+  background: $gray;
+  left: 50%;
+  border-radius: 8px;
+  transform: rotate(calc(18deg * var(--i)));
+  transform-origin: 0 125px;
+  animation: animate 1.9s ease-in-out infinite;
+  animation-delay: calc(0.005s * var(--i));
+}
+
+@keyframes animate {
+  0%,
+  50% {
+    background: $orange-button;
+    box-shadow: none;
+  }
+  50.1%,
+  100% {
+    background: $orange-button;
+    box-shadow: 0 0 5px $orange-button, 0 0 15px $orange-button, 0 0 30px $orange-button,
+      0 0 60px $orange-button, 0 0 90px $orange-button;
+  }
+}
+
+.loader__text {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  letter-spacing: 2px;
+  animation: animateText 2s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+@keyframes animateText {
+  0%,
+  50% {
+    color: $orange-button;
+    text-shadow: none;
+  }
+  50.1%,
+  100% {
+    color: $orange-button;
+    text-shadow: 0 0 5px $orange-button, 0 0 15px $orange-button, 0 0 30px $orange-button,
+      0 0 60px $orange-button, 0 0 90px $orange-button;
   }
 }
