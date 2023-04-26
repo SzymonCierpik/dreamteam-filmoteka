@@ -7,7 +7,6 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  connectAuthEmulator,
   signOut,
   updateProfile,
   AuthErrorCodes,
@@ -29,16 +28,28 @@ import {
   passInput,
   singupForm,
   singupError,
+  emailField,
+  passField,
+  cPassField,
+  userNameField,
 } from './signup';
 
-import { loginForm, eInput, pInput, loginError } from './login';
+import { loginForm, eInput, pInput, loginError, eField, pField } from './login';
+
 import { toggleIsHidden, logoutMenu } from './auth-menu';
+
 import {
   getGuestLibrary,
   guestLibrary,
   addToQueueForGuest,
   addToWatchedForGuest,
 } from './guestLibrary';
+
+import { movieModal } from './modalMovie';
+
+import { createGalleryId } from './createGalleryForMoviesById';
+
+import { getArrayofFilms } from './getMoviesById';
 
 export const logoutBtn = document.querySelector(
   '.auth-menu-logout__logout-button'
@@ -60,11 +71,10 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-///connectAuthEmulator(auth, 'http://localhost:9099');
-
 let userId;
 export let userName;
 export let isLoggedIn;
+let library;
 
 const LoginEmailPassword = async () => {
   const loginEmail = eInput.value;
@@ -75,7 +85,6 @@ const LoginEmailPassword = async () => {
       loginEmail,
       loginPassword
     );
-    console.log(userCredential.user);
   } catch (error) {
     loginError.style.display = 'block';
     if (error.code == AuthErrorCodes.INVALID_PASSWORD) {
@@ -90,7 +99,12 @@ const LoginEmailPassword = async () => {
 
 loginForm.addEventListener('submit', e => {
   e.preventDefault();
-  LoginEmailPassword();
+  if (
+    !eField.classList.contains('error') &&
+    !pField.classList.contains('error')
+  ) {
+    LoginEmailPassword();
+  }
 });
 
 const createAccount = async () => {
@@ -103,7 +117,6 @@ const createAccount = async () => {
       loginEmail,
       loginPassword
     );
-    console.log(userCredential.user);
     await updateProfile(auth.currentUser, {
       displayName: userName,
     });
@@ -122,19 +135,25 @@ const createAccount = async () => {
 singupForm.addEventListener('submit', e => {
   e.preventDefault();
   createAccount();
+  if (
+    !emailField.classList.contains('invalid') &&
+    !passField.classList.contains('invalid') &&
+    !cPassField.classList.contains('invalid') &&
+    !userNameField.classList.contains('invalid')
+  ) {
+    createAccount();
+  }
 });
 
 const monitorAuthState = async () => {
   onAuthStateChanged(auth, user => {
     if (user) {
-      console.log(user);
       userId = user.uid;
       userName = user.displayName;
       isLoggedIn = true;
       singupForm.reset();
       loginForm.reset();
     } else {
-      console.log('sing out');
       isLoggedIn = false;
       getGuestLibrary();
       if (guestLibrary === null) {
@@ -178,6 +197,7 @@ const getUserLibrary = async () => {
   const docSnap = await getDoc(doc(db, 'users', `${userId}`));
   if (docSnap.exists()) {
     console.log('Document data:', docSnap.data());
+    library = docSnap.data();
   } else {
     // docSnap.data() will be undefined in this case
     console.log('No such document!');
@@ -206,4 +226,19 @@ function getLibrary() {
   } else {
     getGuestLibrary();
   }
+}
+
+export function addLisenersToButtons() {
+  const addToWatchedBtn = movieModal.querySelector('#watched');
+  const addToQueueBtn = movieModal.querySelector('#queue');
+
+  addToWatchedBtn.addEventListener('click', e => {
+    let movieId = e.currentTarget.dataset.id;
+    addToWatched(movieId);
+  });
+
+  addToQueueBtn.addEventListener('click', e => {
+    let movieId = e.currentTarget.dataset.id;
+    addToQueue(movieId);
+  });
 }
