@@ -6,6 +6,8 @@ import { getGuestLibrary, guestLibrary } from './guestLibrary';
 
 const gallery = document.querySelector('.films-cards-set');
 
+export let library;
+
 const libraryWatchedBtn = document.querySelector('[data-watched]');
 console.log(libraryWatchedBtn);
 

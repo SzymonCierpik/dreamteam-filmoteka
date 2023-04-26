@@ -76,7 +76,6 @@ const db = getFirestore(app);
 let userId;
 export let userName;
 export let isLoggedIn;
-export let library;
 
 const LoginEmailPassword = async () => {
   const loginEmail = eInput.value;
