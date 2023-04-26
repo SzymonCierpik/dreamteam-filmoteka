@@ -14,7 +14,7 @@ export const createGalleryId = data => {
       }
 
       return `
-        <div class="film-card">
+        <div class="film-card" data-id="${movie.id}">
         <img class="film-img" src="${src}" alt="${
         movie.title
       }" loading="lazy" /> 
