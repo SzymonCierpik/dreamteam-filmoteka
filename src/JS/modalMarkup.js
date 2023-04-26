@@ -44,7 +44,10 @@ function renderMarkup({
           </li>
           <li class="modal__item">
             <p class="modal__item--label">Genre</p>
-            <p class="modal__item--value">${genres}</p>
+            <p class="modal__item--value">
+  ${genres.map(genre => genre.name).join(", ")}
+</p>
+
           </li>
         </ul>
         <div class="modal__overview">
