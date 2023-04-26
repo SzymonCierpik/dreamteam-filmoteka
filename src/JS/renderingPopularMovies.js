@@ -36,7 +36,7 @@ getPopular().then(data => {
   pagination.on('afterMove', ({ page }) => {
     gallery.innerHTML = '';
     getPopular(page).then(data => {
-      createGallery(data.results);
+      gallery.insertAdjacentHTML('beforeend', createGallery(data.results));
 
       const filmCardsArray = document.querySelectorAll('.film-card');
       filmCardsArray.forEach(filmCard => {

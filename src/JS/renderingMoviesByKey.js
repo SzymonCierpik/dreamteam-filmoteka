@@ -44,7 +44,7 @@ function getMoviesById(e) {
       pagination.on('afterMove', ({ page }) => {
         gallery.innerHTML = '';
         getByKey(query, page).then(data => {
-          createGallery(data.results);
+          gallery.insertAdjacentHTML('beforeend', createGallery(data.results));
 
           const filmCardsArray = document.querySelectorAll('.film-card');
           filmCardsArray.forEach(filmCard => {
@@ -67,7 +67,10 @@ function getMoviesById(e) {
         });
       });
     }
-    container.classList.add('is-hidden');
+
+    if (data.total_pages <= 1) {
+      container.classList.add('is-hidden');
+    }
     return;
   });
 }
