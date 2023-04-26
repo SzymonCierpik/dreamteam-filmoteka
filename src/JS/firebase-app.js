@@ -47,12 +47,6 @@ import {
 
 import { movieModal } from './modalMovie';
 
-import { createGalleryId } from './createGalleryForMoviesById';
-
-import { getArrayofFilms } from './getMoviesById';
-
-import { gallery } from './renderingMoviesById';
-
 export const logoutBtn = document.querySelector(
   '.auth-menu-logout__logout-button'
 );
