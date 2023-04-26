@@ -1,3 +1,5 @@
+import { getGenresMovies } from "./getGenres";
+
 function renderMarkup({
   title,
   original_title,
@@ -26,8 +28,8 @@ function renderMarkup({
             <p class="modal__item--label">Vote / Votes</p>
             <div class="modal__item--vote">
               <p class="modal__item--value modal__item--value--vote">
-                <p>${vote_average.toFixed(1)}</p>
-                /<p>${vote_count}</p>
+                <span class="modal__item--average">${vote_average.toFixed(1)}</span>
+                "/"<span class="modal__item--count">${vote_count}</span>
               </p>
             </div>
           </li>
@@ -41,7 +43,7 @@ function renderMarkup({
           </li>
           <li class="modal__item">
             <p class="modal__item--label">Genre</p>
-            <p class="modal__item--value">${genres}</p>
+            <p class="modal__item--value">${genres}}</p>
           </li>
         </ul>
         <div class="modal__overview">
