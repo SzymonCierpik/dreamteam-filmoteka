@@ -15,16 +15,12 @@ getPopular().then(data => {
   const filmCardsArray = document.querySelectorAll('.film-card');
   filmCardsArray.forEach(filmCard => {
     filmCard.addEventListener('click', event => {
-      console.log(event.currentTarget.dataset.id);
-      console.log(event.currentTarget);
       const movieId = event.currentTarget.dataset.id;
       fetchMovieById(movieId)
         .then(response => {
-          console.log(response.data);
           return response.data;
         })
         .then(movieData => {
-          console.log(movieData);
           movieModal.innerHTML = renderMarkup(movieData);
           toggleModal();
         })
@@ -43,16 +39,12 @@ getPopular().then(data => {
       const filmCardsArray = document.querySelectorAll('.film-card');
       filmCardsArray.forEach(filmCard => {
         filmCard.addEventListener('click', event => {
-          console.log(event.currentTarget.dataset.id);
-          console.log(event.currentTarget);
           const movieId = event.currentTarget.dataset.id;
           fetchMovieById(movieId)
             .then(response => {
-              console.log(response.data);
               return response.data;
             })
             .then(movieData => {
-              console.log(movieData);
               movieModal.innerHTML = renderMarkup(movieData);
               toggleModal();
             })
