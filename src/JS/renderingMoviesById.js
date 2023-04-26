@@ -1,7 +1,7 @@
 import { createGalleryId } from './createGalleryForMoviesById';
 import { getArrayofFilms } from './getMoviesById';
 
-import { isLoggedIn, library, getUserLibrary } from './firebase-app';
+import { isLoggedIn, getUserLibrary } from './firebase-app';
 import { getGuestLibrary, guestLibrary } from './guestLibrary';
 
 const gallery = document.querySelector('.films-cards-set');
@@ -47,9 +47,3 @@ libraryQueueBtn.addEventListener('click', () => {
     });
   }
 });
-
-window.onload = () => {
-  getArrayofFilms().then(data => {
-    gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
-  });
-};
