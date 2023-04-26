@@ -49,7 +49,11 @@ z-index: 1001;
 }
 }
 
-.modal__content {
+.modal__content 
+{
+    width: 240px;
+  
+
 @media screen and (min-width: $tablet) {
   width: 264px;
 }
