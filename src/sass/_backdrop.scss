@@ -1,42 +1,42 @@
 .backdrop{
-z-index: 1000;
-width: 100%;
-min-height: 100%;
-opacity: 1;
-visibility: visible;
-background-color: rgba(43, 43, 43, 0.8);
-position: fixed;
-top: 0;
-left: 0;
-padding-top: 20px;
-padding-bottom: 20px;
-
+  z-index: 1000;
+  width: 100%;
+  min-height: 100%;
+  opacity: 1;
+  visibility: visible;
+  background-color: rgba(43, 43, 43, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  }
+}
 
 .modal__cross-btn-icon {
-display: block;
-stroke: black;
+  display: block;
+  stroke: black;
+opacity: none;
+z-index: 1001;
 }
 
 .modal-info {
-display: block;
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 90%;
-max-height: 90%;
-overflow-x: hidden;
-overflow-y: auto;
-background-color: white;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-height: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 @media screen and (min-width: $mobile) {
   width: 280px;
@@ -44,181 +44,165 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 @media screen and (min-width: $tablet) {
   width: 704px;
 }
-
 @media screen and (min-width: $desktop) {
   width: 806px;
 }
 }
 
-.info-wrap {
+.modal__content {
 @media screen and (min-width: $tablet) {
   width: 264px;
 }
-
 @media screen and (min-width: $desktop) {
-  width: 100%;
+  width: 391px;
 }
 }
 
-.image-wrap {
-display: flex;
-justify-content: center;
-}
 .movie-detail__image {
-background-color: aqua;
-width: 240px;
-height: 357px;
-border-radius: 5px;
-margin-bottom: 20px;
+  background-color: aqua;
+  width: 240px;
+  height: 357px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 @media screen and (min-width: $tablet) {
   width: 264px;
   height: 374px;
   margin-bottom: 0;
 }
-
 @media screen and (min-width: $desktop) {
   width: 375px;
   height: 478px;
 }
 }
 
-.movie-detail__title {
-color:$black;
-font-style: normal;
-font-weight: 500;
-font-size: 30px;
-line-height: 35px;
-margin-bottom: 20px;
-text-transform: uppercase;
+.modal__title {
+  color:$black;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 35px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 
 @media screen and (min-width: $desktop) {
   font-size: 30px;
 }
 }
 
-.movie-detail__about {
-color:$black;
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 16px;
-margin-bottom: 8px;
-text-transform: uppercase;
+.modal__list {
+  color:$black;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 20px;
 }
 
-.movie-detail__title-table-titles {
-color:$gray;
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-margin-right: 41px;
-padding: 0;
-@media screen and (min-width: $desktop) {
-  margin-right: 85px;
-}
-@media screen and (min-width: $tablet) {
-  margin-right: 40px;
-
-}
+.modal__item--label {
+  width: 38%;
+  color:$gray;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0;
 }
 
-.movie-detail__table {
-display: flex;
-margin-bottom: 20px;
-width: 100%;
-}
-.movie-detail__rating {
-color:$white;
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-background-color: $orange-button;
-border-radius: 5px;
-padding: 1px 8px;
-margin-right: 5px;
+.modal__item--value big {
+  text-transform: uppercase;
 }
 
-.movie-detail__info {
-color:$black;
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
+.modal__item {
+  display: flex;
+  margin-bottom: 8px;
+  width: 100%;
+}
+.modal__item--value--vote vote_average {
+  color:$white;
+  background-color: $orange-button;
+  border-radius: 5px;
+  padding: 1px 8px;
+  margin-right: 5px;
+}
 
-&.movie-votes {
+.modal__item--value--vote vote__count {
   background-color: $footer;
   border-radius: 5px;
   padding: 1px 8px;
   margin-left: 5px;
 }
-}
 
-.movie-detail__info--uppercase {
-text-transform: uppercase;
+.modal__overview--about {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+  margin-bottom: 8px;
 }
-.movie-detail__about-text {
-color:$black;
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
+.modal__button {
+  padding: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid $black;
+  text-transform: uppercase;
+  width: 110px;
+  height: 44px;
+  line-height: 1.33;
+  font-weight: 500;
+  font-size: 12px;
+  background-color: $white;
+&:hover,
+&:focus {
+  border: 0;
+  background-color: $orange-button;
+  color: $white;
 }
-
-.movie-detail__button {
-padding: 0;
-padding-left: 5px;
-padding-right: 5px;
-margin-left: 8px;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 5px;
-border: 1px solid $black;
-text-transform: uppercase;
-width: 110px;
-height: 44px;
-line-height: 1.33;
-background-color: $white;
-}
-
-.movie-detail__button.highlighted {
-border: 0;
-background-color: $orange-button;
-color: $white;
-}
-
-.movie-detail__buttons-wrapper {
-display: flex;
-gap: 20px;
-margin-top: 20px;
-flex-direction: row;
-align-items: center;
-
 @media screen and (min-width: $tablet) {
-  gap: 7px;
+  width: 125px; 
+}
+@media screen and (min-width: $desktop) {
+  width: 136px;
+}
+}
+
+.modal__buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-direction: row;
+  align-items: center;
+  
+@media screen and (min-width: $tablet) {
+  gap: 15px;
+}
+@media screen and (min-width: $desktop) {
+  margin-left: 4px;
 }
 }
 
 .modal__cross-btn {
-padding: 0;
-position: absolute;
-top: 8px;
-right: 8px;
-background-color: transparent;
-border: none;
-cursor: pointer;
+  padding: 0;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
 }
+
 
 .movie-info-content {
   color:$black;
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-display: block;
-padding: 48px 20px 40px;
-
-@media screen and (min-width: $mobile) {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  display: block;
+  padding: 48px 20px 40px;
   width: 320px;
-  height:940px;
-}
+  height: 940px;
+
 
 @media screen and (min-width: $tablet) {
   display: flex;
@@ -227,7 +211,6 @@ padding: 48px 20px 40px;
   padding: 40px 72px 40px 36px;
   justify-content: space-between;
 }
-
 @media screen and (min-width: $desktop) {
   width: 806px;
   height: 558px;
