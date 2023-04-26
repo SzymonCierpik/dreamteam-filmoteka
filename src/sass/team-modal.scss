@@ -1,0 +1,28 @@
+.backdrop--flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.team-modal {
+  width: 100%;
+  height: auto;
+
+  &__video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .team-modal {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .team-modal {
+    width: 80%;
+  }
+}

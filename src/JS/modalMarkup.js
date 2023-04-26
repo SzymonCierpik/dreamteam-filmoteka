@@ -1,3 +1,6 @@
+import { getMovies, getPopularMovies, getGenresMovies } from './getGenres.js';
+
+
 function renderMarkup({
   title,
   original_title,
@@ -7,17 +10,15 @@ function renderMarkup({
   id,
   vote_average,
   vote_count,
-  genres,
+  genresTitle,
 }) {
   if (!poster_path) {
     poster = 'https://live.staticflickr.com/65535/52673964597_7ac974f3b4_k.jpg';
   }
+ 
   const markup = `
-  <button type="button" class="modal__cross-btn">
-  <svg class="modal__cross-btn-icon" width="30" height="30">
-    <use href="./images/icons.svg#icon-close"></use>
-  </svg>
-</button><div class="movie-info-content">
+ 
+
       <img
         class="movie-detail__image"
         src="https://image.tmdb.org/t/p/w500//${poster_path}"
@@ -29,8 +30,8 @@ function renderMarkup({
             <p class="modal__item--label">Vote / Votes</p>
             <div class="modal__item--vote">
               <p class="modal__item--value modal__item--value--vote">
-                <p>${vote_average.toFixed(1)}</p>
-                /<p>${vote_count}</p>
+                <span class="modal__item--average">${vote_average.toFixed(1)}</span>
+                "/"<span class="modal__item--count">${vote_count}</span>
               </p>
             </div>
           </li>
@@ -45,20 +46,20 @@ function renderMarkup({
           <li class="modal__item">
             <p class="modal__item--label">Genre</p>
             <p class="modal__item--value">
-  ${genres.map(genre => genre.name).join(", ")}
-</p>
-
+  ${genres.map(genre => genre.name).join(", ")}</p>
+            <p class="info-text">${genresTitle}
+            </P>
           </li>
         </ul>
         <div class="modal__overview">
           <h3 class="modal__overview--about">ABOUT</h3>
           <p class="modal__overview--overview">${overview}</p>
         </div>
-        <div class="modal__buttons" data-id="${id}">
-          <button id="watched" class="modal__button modal__button--watched">
+        <div class="modal__buttons">
+          <button id="watched" class="modal__button modal__button--watched" data-id="${id}">
             Add to watched
           </button>
-          <button id="queue" class="modal__button modal__button--queue">
+          <button id="queue" class="modal__button modal__button--queue" data-id="${id}">
             Add to queue
           </button>
         </div>
@@ -67,6 +68,6 @@ function renderMarkup({
   </div>
 </div>`;
   return markup;
-}
+}  
 
 export { renderMarkup };

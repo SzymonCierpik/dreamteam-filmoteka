@@ -3,6 +3,7 @@ import { createGallery } from './createGallery';
 import { createPagination } from './pagination';
 import { fetchMovieById, toggleModal, movieModal } from './modalMovie';
 import { renderMarkup } from './modalMarkup';
+import { addLisenersToButtons } from './firebase-app';
 /* import { scrollOnTop } from './scroll-on-top';
 import { showHideLoader } from './loader';
 import refs from './refs'; */
@@ -23,6 +24,7 @@ getPopular().then(data => {
         .then(movieData => {
           movieModal.innerHTML = renderMarkup(movieData);
           toggleModal();
+          addLisenersToButtons();
         })
         .catch(error => {
           throw new Error(error);
@@ -47,6 +49,7 @@ getPopular().then(data => {
             .then(movieData => {
               movieModal.innerHTML = renderMarkup(movieData);
               toggleModal();
+              addLisenersToButtons();
             })
             .catch(error => {
               throw new Error(error);
