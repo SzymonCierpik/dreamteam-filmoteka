@@ -15,7 +15,6 @@ export const createGalleryId = data => {
 
       return `
         <div class="film-card">
-        <a href=https://image.tmdb.org/t/p/original/${movie.poster_path}>
         <img class="film-img" src="${src}" alt="${
         movie.title
       }" loading="lazy" /> 
@@ -28,7 +27,6 @@ export const createGalleryId = data => {
         4
       )} <span class="info-rating">${movie.vote_average}</span></p>
         </div>
-        </a>
         </div>
         `;
     })
