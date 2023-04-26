@@ -115,15 +115,15 @@ z-index: 1001;
   margin-bottom: 8px;
   width: 100%;
 }
-.modal__item--value--vote vote_average {
-  color:$white;
+.modal__item--average {
+  color:white;
   background-color: $orange-button;
   border-radius: 5px;
   padding: 1px 8px;
   margin-right: 5px;
 }
 
-.modal__item--value--vote vote__count {
+.modal__item--count {
   background-color: $footer;
   border-radius: 5px;
   padding: 1px 8px;
