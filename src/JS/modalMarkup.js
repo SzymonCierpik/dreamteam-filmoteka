@@ -26,8 +26,8 @@ function renderMarkup({
             <p class="modal__item--label">Vote / Votes</p>
             <div class="modal__item--vote">
               <p class="modal__item--value modal__item--value--vote">
-                <p>${vote_average.toFixed(1)}</p>
-                /<p>${vote_count}</p>
+                <span class="vote_average">${vote_average.toFixed(1)}</span>
+                /<span class="vote__count">${vote_count}</span>
               </p>
             </div>
           </li>

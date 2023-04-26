@@ -106,7 +106,7 @@ z-index: 1001;
   padding: 0;
 }
 
-.modal__item--value big {
+.big {
   text-transform: uppercase;
 }
 
@@ -115,7 +115,7 @@ z-index: 1001;
   margin-bottom: 8px;
   width: 100%;
 }
-.modal__item--value--vote vote_average {
+.vote_average {
   color:$white;
   background-color: $orange-button;
   border-radius: 5px;
@@ -123,7 +123,7 @@ z-index: 1001;
   margin-right: 5px;
 }
 
-.modal__item--value--vote vote__count {
+.vote__count {
   background-color: $footer;
   border-radius: 5px;
   padding: 1px 8px;
