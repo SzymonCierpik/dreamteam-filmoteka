@@ -12,6 +12,8 @@ import { fetchMovieById } from './modalMovie';
 
 import { renderMarkup } from './modalMarkup';
 
+import { movieModal } from './modalMovie';
+
 const gallery = document.querySelector('.films-cards-set');
 
 export let library;
