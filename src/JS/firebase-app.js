@@ -51,6 +51,8 @@ import { createGalleryId } from './createGalleryForMoviesById';
 
 import { getArrayofFilms } from './getMoviesById';
 
+import { gallery } from './renderingMoviesById';
+
 export const logoutBtn = document.querySelector(
   '.auth-menu-logout__logout-button'
 );
@@ -74,7 +76,7 @@ const db = getFirestore(app);
 let userId;
 export let userName;
 export let isLoggedIn;
-let library;
+export let library;
 
 const LoginEmailPassword = async () => {
   const loginEmail = eInput.value;
@@ -193,10 +195,11 @@ const addToQueueForUser = async movieId => {
   });
 };
 
-const getUserLibrary = async () => {
+export const getUserLibrary = async () => {
   const docSnap = await getDoc(doc(db, 'users', `${userId}`));
   if (docSnap.exists()) {
-    console.log('Document data:', docSnap.data());
+    const docData = docSnap.data();
+    return docData;
   } else {
     // docSnap.data() will be undefined in this case
     console.log('No such document!');
@@ -216,14 +219,6 @@ function addToQueue(movieId) {
     addToQueueForUser(movieId);
   } else {
     addToQueueForGuest(movieId);
-  }
-}
-
-function getLibrary() {
-  if (isLoggedIn) {
-    getUserLibrary();
-  } else {
-    getGuestLibrary();
   }
 }
 
