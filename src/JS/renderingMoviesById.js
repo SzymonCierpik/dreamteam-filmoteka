@@ -27,6 +27,24 @@ libraryWatchedBtn.addEventListener('click', () => {
       gallery.innerHTML = '';
       getArrayofFilms(library.watched).then(data => {
         gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
+        const filmCardsArray = document.querySelectorAll('.film-card');
+        filmCardsArray.forEach(filmCard => {
+          filmCard.addEventListener('click', event => {
+            const movieId = event.currentTarget.dataset.id;
+            fetchMovieById(movieId)
+              .then(response => {
+                return response.data;
+              })
+              .then(movieData => {
+                movieModal.innerHTML = renderMarkup(movieData);
+                toggleModal();
+                addLisenersToButtons();
+              })
+              .catch(error => {
+                throw new Error(error);
+              });
+          });
+        });
       });
     });
   } else {
@@ -34,6 +52,24 @@ libraryWatchedBtn.addEventListener('click', () => {
     gallery.innerHTML = '';
     getArrayofFilms(guestLibrary.watched).then(data => {
       gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
+      const filmCardsArray = document.querySelectorAll('.film-card');
+      filmCardsArray.forEach(filmCard => {
+        filmCard.addEventListener('click', event => {
+          const movieId = event.currentTarget.dataset.id;
+          fetchMovieById(movieId)
+            .then(response => {
+              return response.data;
+            })
+            .then(movieData => {
+              movieModal.innerHTML = renderMarkup(movieData);
+              toggleModal();
+              addLisenersToButtons();
+            })
+            .catch(error => {
+              throw new Error(error);
+            });
+        });
+      });
     });
   }
 });
