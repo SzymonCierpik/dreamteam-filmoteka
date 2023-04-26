@@ -27,6 +27,10 @@ export function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
 }
 
+function CloseMdl() {
+  refs.modal.classList.add('is-hidden');
+}
+
 const closeByClick = event => {
   if (event.target === refs.modal) {
     toggleModal()
@@ -37,7 +41,7 @@ const closeByKey =  (event) => {
   if (event.key !== "Escape" ) {
     false;
   }else {
-    toggleModal()
+    CloseMdl()
   }
 }
 
