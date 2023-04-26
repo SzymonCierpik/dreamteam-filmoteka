@@ -21,6 +21,8 @@
 .modal__cross-btn-icon {
   display: block;
   stroke: black;
+opacity: none;
+z-index: 1001;
 }
 
 .modal-info {
@@ -200,6 +202,7 @@
   padding: 48px 20px 40px;
   width: 320px;
   height: 940px;
+
 
 @media screen and (min-width: $tablet) {
   display: flex;
