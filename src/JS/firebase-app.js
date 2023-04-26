@@ -76,7 +76,7 @@ const db = getFirestore(app);
 let userId;
 export let userName;
 export let isLoggedIn;
-let library;
+export let library;
 
 const LoginEmailPassword = async () => {
   const loginEmail = eInput.value;
@@ -195,7 +195,7 @@ const addToQueueForUser = async movieId => {
   });
 };
 
-const getUserLibrary = async () => {
+export const getUserLibrary = async () => {
   const docSnap = await getDoc(doc(db, 'users', `${userId}`));
   if (docSnap.exists()) {
     const docData = docSnap.data();
