@@ -12,7 +12,12 @@ function renderMarkup({
   if (!poster_path) {
     poster = 'https://live.staticflickr.com/65535/52673964597_7ac974f3b4_k.jpg';
   }
-  const markup = `<div class="movie-info-content">
+  const markup = `
+  <button type="button" class="modal__cross-btn">
+  <svg class="modal__cross-btn-icon" width="30" height="30">
+    <use href="./images/icons.svg#icon-close"></use>
+  </svg>
+</button><div class="movie-info-content">
       <img
         class="movie-detail__image"
         src="https://image.tmdb.org/t/p/w500//${poster_path}"
