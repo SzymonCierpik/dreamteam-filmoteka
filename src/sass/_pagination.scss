@@ -23,7 +23,7 @@
   width: 28px;
   padding: 8px 0 6px;
   margin-left: 0;
-  color: $black;
+  color: #000000;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -41,12 +41,12 @@
 .tui-pagination strong {
   color: #fff;
   border-radius: 5px;
-  background: $orange-button;
-  border-color: $orange-button;
+  background: #ff6b01;
+  border-color: #ff6b01;
   cursor: default;
 }
 .tui-pagination .tui-is-selected:hover {
-  background-color: $orange-button;
+  background-color: #ff6b01;
 }
 .tui-pagination .tui-first-child,
 .tui-pagination .tui-prev-is-ellip {
