@@ -34,11 +34,13 @@ const closeByClick = event => {
 }
 
 const closeByKey =  (event) => {
-  if (event.key = "Escape" || event.keyCode === 27) {
+  if (event.key !== "Escape" ) {
+    false;
+  }else {
     toggleModal()
   }
 }
 
 
 refs.modal.addEventListener("click", closeByClick)
-window.addEventListener("keydown", closeByKey)
+window.addEventListener("keydown", closeByKey)  
