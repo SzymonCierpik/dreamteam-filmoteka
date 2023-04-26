@@ -1,4 +1,4 @@
-import './open-and-close-modal';
+
 import { renderMarkup } from './modalMarkup';
 import axios from 'axios';
 
@@ -26,3 +26,25 @@ refs.closeModalBtn.addEventListener('click', toggleModal);
 export function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
 }
+
+function CloseMdl() {
+  refs.modal.classList.add('is-hidden');
+}
+
+const closeByClick = event => {
+  if (event.target === refs.modal) {
+    toggleModal()
+  }
+}
+
+const closeByKey =  (event) => {
+  if (event.key !== "Escape" ) {
+    false;
+  }else {
+    CloseMdl()
+  }
+}
+
+
+refs.modal.addEventListener("click", closeByClick)
+window.addEventListener("keydown", closeByKey)  
