@@ -1,4 +1,3 @@
-
 import { renderMarkup } from './modalMarkup';
 import axios from 'axios';
 
@@ -11,7 +10,7 @@ export async function fetchMovieById(id) {
   return response;
 }
 
-export const movieModal = document.querySelector('.modal-info');
+export const movieModal = document.querySelector('.movie-info-content');
 // funkcja otwierająca moda
 // (() => {
 const refs = {
@@ -33,18 +32,17 @@ function CloseMdl() {
 
 const closeByClick = event => {
   if (event.target === refs.modal) {
-    toggleModal()
+    toggleModal();
   }
-}
+};
 
-const closeByKey =  (event) => {
-  if (event.key !== "Escape" ) {
+const closeByKey = event => {
+  if (event.key !== 'Escape') {
     false;
-  }else {
-    CloseMdl()
+  } else {
+    CloseMdl();
   }
-}
+};
 
-
-refs.modal.addEventListener("click", closeByClick)
-window.addEventListener("keydown", closeByKey)  
+refs.modal.addEventListener('click', closeByClick);
+window.addEventListener('keydown', closeByKey);
