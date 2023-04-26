@@ -10,7 +10,7 @@ function renderMarkup({
   id,
   vote_average,
   vote_count,
-  genresTitle,
+  genres,
 }) {
   if (!poster_path) {
     poster = 'https://live.staticflickr.com/65535/52673964597_7ac974f3b4_k.jpg';
@@ -46,9 +46,8 @@ function renderMarkup({
           <li class="modal__item">
             <p class="modal__item--label">Genre</p>
             <p class="modal__item--value">
-  ${genres.map(genre => genre.name).join(", ")}</p>
-            <p class="info-text">${genresTitle}
-            </P>
+  ${genres.map(genre => genre.name).join(", ")}
+</p>
           </li>
         </ul>
         <div class="modal__overview">
