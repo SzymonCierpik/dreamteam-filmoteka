@@ -31,7 +31,6 @@
   text-decoration: none;
   vertical-align: middle;
   border: none;
-  //   border-width: 1px 0;
 }
 .tui-pagination .tui-page-btn:hover {
   background-color: #f4f4f4;
@@ -51,13 +50,11 @@
 .tui-pagination .tui-first-child,
 .tui-pagination .tui-prev-is-ellip {
   border-left: none;
-  //   display: none;
 }
 
 .tui-pagination .tui-last-child,
 .tui-pagination .tui-next-is-ellip {
   border-right: none;
-  //   display: none;
 }
 
 .tui-pagination .tui-first-child.tui-is-selected {
@@ -80,9 +77,6 @@
 .tui-page-btn .tui-first {
   display: none;
 }
-// .tui-pagination .tui-next + .tui-last {
-//   display: none;
-// }
 .tui-pagination .tui-first {
   display: none;
 }
