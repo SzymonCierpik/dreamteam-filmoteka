@@ -1,6 +1,6 @@
 import './JS/loader.js';
 import './JS/darkmode.js';
-import './JS/video.js';
+import './JS/renderingMoviesById.js';
 
 // Firebase
 import './JS/auth-menu.js';
