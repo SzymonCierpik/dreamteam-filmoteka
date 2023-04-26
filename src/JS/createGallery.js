@@ -65,7 +65,7 @@ export const createGallery = data => {
         `; // Class name and other should be update
     })
     .join(' ');
-  gallery.insertAdjacentHTML('beforeend', movies);
+  return movies;
 };
 
 buttonForm.addEventListener('click', handleClick);
