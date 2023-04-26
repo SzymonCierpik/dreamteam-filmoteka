@@ -11,41 +11,45 @@ export let library;
 const libraryWatchedBtn = document.querySelector('[data-watched]');
 console.log(libraryWatchedBtn);
 
-libraryWatchedBtn.addEventListener('click', () => {
-  if (isLoggedIn) {
-    getUserLibrary().then(response => {
-      library = response;
+if (libraryWatchedBtn !== null) {
+  libraryWatchedBtn.addEventListener('click', () => {
+    if (isLoggedIn) {
+      getUserLibrary().then(response => {
+        library = response;
+        gallery.innerHTML = '';
+        getArrayofFilms(library.watched).then(data => {
+          gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
+        });
+      });
+    } else {
+      getGuestLibrary();
       gallery.innerHTML = '';
-      getArrayofFilms(library.watched).then(data => {
+      getArrayofFilms(guestLibrary.watched).then(data => {
         gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
       });
-    });
-  } else {
-    getGuestLibrary();
-    gallery.innerHTML = '';
-    getArrayofFilms(guestLibrary.watched).then(data => {
-      gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
-    });
-  }
-});
+    }
+  });
+}
 
 const libraryQueueBtn = document.querySelector('[data-queue]');
 console.log(libraryQueueBtn);
 
-libraryQueueBtn.addEventListener('click', () => {
-  if (isLoggedIn) {
-    getUserLibrary().then(response => {
-      library = response;
+if (libraryQueueBtn !== null) {
+  libraryQueueBtn.addEventListener('click', () => {
+    if (isLoggedIn) {
+      getUserLibrary().then(response => {
+        library = response;
+        gallery.innerHTML = '';
+        getArrayofFilms(library.queue).then(data => {
+          gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
+        });
+      });
+    } else {
+      getGuestLibrary();
       gallery.innerHTML = '';
-      getArrayofFilms(library.queue).then(data => {
+      getArrayofFilms(guestLibrary.queue).then(data => {
         gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
       });
-    });
-  } else {
-    getGuestLibrary();
-    gallery.innerHTML = '';
-    getArrayofFilms(guestLibrary.queue).then(data => {
-      gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
-    });
-  }
-});
+    }
+  });
+}
