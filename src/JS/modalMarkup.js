@@ -46,7 +46,7 @@ function renderMarkup({
           <h3 class="modal__overview--about">ABOUT</h3>
           <p class="modal__overview--overview">${overview}</p>
         </div>
-        <div class="modal__buttons">
+        <div class="modal__buttons" data-id="${id}">
           <button id="watched" class="modal__button modal__button--watched">
             Add to watched
           </button>

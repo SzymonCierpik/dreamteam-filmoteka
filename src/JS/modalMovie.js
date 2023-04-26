@@ -2,6 +2,16 @@ import './open-and-close-modal';
 import { renderMarkup } from './modalMarkup';
 import axios from 'axios';
 
+export async function fetchMovieById(id) {
+  const API_URL = 'https://api.themoviedb.org/3/movie/';
+  const API_KEY = 'b118f38ec77100db6763b4cc83604589';
+  const FETCH_URL = `${API_URL}` + `${id}` + '?api_key=' + `${API_KEY}`;
+
+  let response = await axios.get(FETCH_URL);
+  return response;
+}
+
+export const movieModal = document.querySelector('.modal-info');
 // funkcja otwierająca moda
 // (() => {
 const refs = {
@@ -10,12 +20,10 @@ const refs = {
   modal: document.querySelector('.backdrop'),
 };
 
-const backdrop = document.querySelector('.backdrop');
-
-refs.openModalBtn.addEventListener('click', toggleModal);
+///refs.openModalBtn.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', toggleModal);
 
-function toggleModal() {
+export function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
 }
 // })();
@@ -33,11 +41,13 @@ const openModal = e => {
   const movieId = e.currentTarget.closest('.film-card').getAttribute('data-id');
 
   fetchMovieById(movieId)
+    .then(response => {
+      console.log(response.data);
+      return response.data;
+    })
     .then(movieData => {
-      backdrop.innerHTML = renderModal(movieData);
-
-      // dodanie elementu backdrop do ciała dokumentu
-      document.body.appendChild(backdrop);
+      console.log(movieData);
+      movieModal.innerHTML = renderMarkup(movieData);
     })
     .catch(error => {
       throw new Error(error);
@@ -46,16 +56,5 @@ const openModal = e => {
   // szukamy nasza liste w DOM
   const galleryListDOM = document.querySelector('.films-cards-set'); // tu powinna by klasa calej galerii/listy
 };
-
-async function fetchMovieById(id) {
-  const API_URL = 'https://api.themoviedb.org/3/movie/';
-  const API_KEY = 'b118f38ec77100db6763b4cc83604589';
-  const FETCH_URL = `${API_URL}` + `${id}` + '?api_key=' + `${API_KEY}`;
-
-  await axios.get(FETCH_URL).then(response => {
-    console.log(response.data);
-    return response.data;
-  });
-}
 
 export { openModal };

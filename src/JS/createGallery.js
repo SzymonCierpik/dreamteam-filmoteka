@@ -48,7 +48,7 @@ export const createGallery = data => {
       const stringVote = String(movie.vote_average).slice(0, 3);
 
       return `
-        <div class="film-card data-id="${movie.id}">
+        <div class="film-card" data-id="${movie.id}">
         <div>
         <img class="film-img" src="${src}" alt="${
         movie.title
