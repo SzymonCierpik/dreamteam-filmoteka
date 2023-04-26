@@ -4,7 +4,7 @@ const alert = document.querySelector('#wrongSearch');
 export const createGalleryId = data => {
   const movies = data
     .map(movie => {
-     /*  console.log(movie.id); */
+      /*  console.log(movie.id); */
       let src;
       /* console.log(movie.id); */
       if (movie.poster_path === null) {
@@ -16,17 +16,24 @@ export const createGalleryId = data => {
       return `
         <div class="film-card">
         <a href=https://image.tmdb.org/t/p/original/${movie.poster_path}>
-        <img class="film-img" src="${src}" alt="${movie.title}" loading="lazy" /> 
+        <img class="film-img" src="${src}" alt="${
+        movie.title
+      }" loading="lazy" /> 
         <div class="info">
         <p class="info-title">${movie.original_title}</p>
-        <p class="info-text">${movie.genres.map(genre => genre.name).join(" , ")} | ${movie.release_date.substring(0,4)} <span class="info-rating">${movie.vote_average}</span></p>
+        <p class="info-text">${movie.genres
+          .map(genre => genre.name)
+          .join(' , ')} | ${movie.release_date.substring(
+        0,
+        4
+      )} <span class="info-rating">${movie.vote_average}</span></p>
         </div>
         </a>
         </div>
         `;
     })
     .join(' ');
-  gallery.insertAdjacentHTML('beforeend', movies);
+  return movies;
 };
 
 /* function clearGallery() {
