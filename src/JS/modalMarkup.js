@@ -45,19 +45,20 @@ function renderMarkup({
           </li>
           <li class="modal__item">
             <p class="modal__item--label">Genre</p>
-            <p class="modal__item--value">${genres}
-            </P>
+            <p class="modal__item--value">
+  ${genres.map(genre => genre.name).join(", ")}
+</p>
           </li>
         </ul>
         <div class="modal__overview">
           <h3 class="modal__overview--about">ABOUT</h3>
           <p class="modal__overview--overview">${overview}</p>
         </div>
-        <div class="modal__buttons" data-id="${id}">
-          <button id="watched" class="modal__button modal__button--watched">
+        <div class="modal__buttons">
+          <button id="watched" class="modal__button modal__button--watched" data-id="${id}">
             Add to watched
           </button>
-          <button id="queue" class="modal__button modal__button--queue">
+          <button id="queue" class="modal__button modal__button--queue" data-id="${id}">
             Add to queue
           </button>
         </div>
