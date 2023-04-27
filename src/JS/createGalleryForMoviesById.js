@@ -27,7 +27,10 @@ export const createGalleryId = data => {
           .join(', ')} | ${movie.release_date.substring(
         0,
         4
-      )} <span class="info-rating">${String(movie.vote_average).slice(0,3)}</span></p>
+      )} <span class="info-rating">${String(movie.vote_average).slice(
+        0,
+        3
+      )}</span></p>
         </div>
         </div>
         `;
