@@ -50,6 +50,8 @@ z-index: 1001;
 }
 
 .modal__content {
+    width: 240px;
+  
 @media screen and (min-width: $tablet) {
   width: 264px;
 }
@@ -64,6 +66,7 @@ z-index: 1001;
   height: 357px;
   border-radius: 5px;
   margin-bottom: 20px;
+  object-fit: cover;
 @media screen and (min-width: $tablet) {
   width: 264px;
   height: 374px;
@@ -80,12 +83,17 @@ z-index: 1001;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 35px;
+  line-height: 23px;
   margin-bottom: 20px;
   text-transform: uppercase;
 
+@media screen and (min-width: $tablet) {
+  font-size: 20px;
+  line-height: 35px;
+}
 @media screen and (min-width: $desktop) {
   font-size: 30px;
+  line-height: 35px;
 }
 }
 
@@ -97,16 +105,7 @@ z-index: 1001;
   margin-bottom: 20px;
 }
 
-.modal__item--label {
-  width: 38%;
-  color:$gray;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  padding: 0;
-}
-
-.modal__item--value big {
+.big {
   text-transform: uppercase;
 }
 
@@ -115,15 +114,25 @@ z-index: 1001;
   margin-bottom: 8px;
   width: 100%;
 }
-.modal__item--value--vote vote_average {
-  color:$white;
+
+.modal__item--label {
+  width: 36%;
+  color:$gray;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0;
+}
+
+.modal__item--average {
+  color:white;
   background-color: $orange-button;
   border-radius: 5px;
   padding: 1px 8px;
   margin-right: 5px;
 }
 
-.modal__item--value--vote vote__count {
+.modal__item--count {
   background-color: $footer;
   border-radius: 5px;
   padding: 1px 8px;
@@ -192,7 +201,6 @@ z-index: 1001;
   z-index: 999;
 }
 
-
 .movie-info-content {
   color:$black;
   font-style: normal;
@@ -202,7 +210,6 @@ z-index: 1001;
   padding: 48px 20px 40px;
   width: 320px;
   height: 940px;
-
 
 @media screen and (min-width: $tablet) {
   display: flex;

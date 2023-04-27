@@ -3,6 +3,7 @@ import { createGallery } from './createGallery';
 import { createPagination } from './pagination';
 import { fetchMovieById, toggleModal, movieModal } from './modalMovie';
 import { renderMarkup } from './modalMarkup';
+import { addLisenersToButtons } from './firebase-app';
 /* import { scrollOnTop } from './scroll-on-top';
 import { showHideLoader } from './loader';
 import refs from './refs'; */
@@ -23,6 +24,7 @@ getPopular().then(data => {
         .then(movieData => {
           movieModal.innerHTML = renderMarkup(movieData);
           toggleModal();
+          addLisenersToButtons();
         })
         .catch(error => {
           throw new Error(error);
@@ -34,7 +36,7 @@ getPopular().then(data => {
   pagination.on('afterMove', ({ page }) => {
     gallery.innerHTML = '';
     getPopular(page).then(data => {
-      createGallery(data.results);
+      gallery.insertAdjacentHTML('beforeend', createGallery(data.results));
 
       const filmCardsArray = document.querySelectorAll('.film-card');
       filmCardsArray.forEach(filmCard => {
@@ -47,6 +49,7 @@ getPopular().then(data => {
             .then(movieData => {
               movieModal.innerHTML = renderMarkup(movieData);
               toggleModal();
+              addLisenersToButtons();
             })
             .catch(error => {
               throw new Error(error);

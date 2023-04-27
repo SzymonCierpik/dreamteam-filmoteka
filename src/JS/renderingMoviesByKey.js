@@ -4,6 +4,7 @@ import { createPagination } from './pagination';
 
 import { fetchMovieById, toggleModal, movieModal } from './modalMovie';
 import { renderMarkup } from './modalMarkup';
+import { addLisenersToButtons } from './firebase-app';
 
 const buttonForm = document.querySelector('[data-search]');
 const gallery = document.querySelector('.films-cards-set');
@@ -31,6 +32,7 @@ function getMoviesById(e) {
             .then(movieData => {
               movieModal.innerHTML = renderMarkup(movieData);
               toggleModal();
+              addLisenersToButtons();
             })
             .catch(error => {
               throw new Error(error);
@@ -42,7 +44,7 @@ function getMoviesById(e) {
       pagination.on('afterMove', ({ page }) => {
         gallery.innerHTML = '';
         getByKey(query, page).then(data => {
-          createGallery(data.results);
+          gallery.insertAdjacentHTML('beforeend', createGallery(data.results));
 
           const filmCardsArray = document.querySelectorAll('.film-card');
           filmCardsArray.forEach(filmCard => {
@@ -55,6 +57,7 @@ function getMoviesById(e) {
                 .then(movieData => {
                   movieModal.innerHTML = renderMarkup(movieData);
                   toggleModal();
+                  addLisenersToButtons();
                 })
                 .catch(error => {
                   throw new Error(error);
@@ -64,7 +67,10 @@ function getMoviesById(e) {
         });
       });
     }
-    container.classList.add('is-hidden');
+
+    if (data.total_pages <= 1) {
+      container.classList.add('is-hidden');
+    }
     return;
   });
 }
