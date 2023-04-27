@@ -1,6 +1,5 @@
 import { getMovies, getPopularMovies, getGenresMovies } from './getGenres.js';
 
-
 function renderMarkup({
   title,
   original_title,
@@ -15,13 +14,13 @@ function renderMarkup({
   if (!poster_path) {
     poster = 'https://live.staticflickr.com/65535/52673964597_7ac974f3b4_k.jpg';
   }
- 
+
   const markup = `
  
 
       <img
         class="movie-detail__image"
-        src="https://image.tmdb.org/t/p/w500//${poster_path}"
+        src="https://image.tmdb.org/t/p/w500//${poster_path}" srcset="https://image.tmdb.org/t/p/original/${poster_path} 2x"
       />
       <div class="modal__content">
         <h2 class="modal__title">${title}</h2>
@@ -30,7 +29,9 @@ function renderMarkup({
             <p class="modal__item--label">Vote / Votes</p>
             <div class="modal__item--vote">
               <p class="modal__item--value modal__item--value--vote">
-                <span class="modal__item--average">${vote_average.toFixed(1)}</span>
+                <span class="modal__item--average">${vote_average.toFixed(
+                  1
+                )}</span>
                 /<span class="modal__item--count">${vote_count}</span>
               </p>
             </div>
@@ -46,7 +47,7 @@ function renderMarkup({
           <li class="modal__item">
             <p class="modal__item--label">Genre</p>
             <p class="modal__item--value">
-  ${genres.map(genre => genre.name).join(", ")}
+  ${genres.map(genre => genre.name).join(', ')}
 </p>
           </li>
         </ul>
@@ -67,6 +68,6 @@ function renderMarkup({
   </div>
 </div>`;
   return markup;
-}  
+}
 
 export { renderMarkup };

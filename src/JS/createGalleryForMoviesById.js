@@ -17,7 +17,9 @@ export const createGalleryId = data => {
         <div class="film-card" data-id="${movie.id}">
         <img class="film-img" src="${src}" alt="${
         movie.title
-      }" loading="lazy" /> 
+      }" loading="lazy" srcset="https://image.tmdb.org/t/p/original/${
+        movie.poster_path
+      } 2x /> 
         <div class="info">
         <p class="info-title">${movie.original_title}</p>
         <p class="info-text">${movie.genres
