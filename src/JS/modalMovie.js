@@ -26,7 +26,7 @@ export function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
 }
 
-function CloseMdl() {
+function closeMdl() {
   refs.modal.classList.add('is-hidden');
 }
 
@@ -40,7 +40,7 @@ const closeByKey = event => {
   if (event.key !== 'Escape') {
     false;
   } else {
-    CloseMdl();
+    closeMdl();
   }
 };
 
