@@ -19,7 +19,7 @@ export const createGalleryId = data => {
         movie.title
       }" loading="lazy" srcset="https://image.tmdb.org/t/p/original/${
         movie.poster_path
-      } 2x" /> 
+      } 2x /> 
         <div class="info">
         <p class="info-title">${movie.original_title}</p>
         <p class="info-text">${movie.genres
@@ -27,10 +27,7 @@ export const createGalleryId = data => {
           .join(', ')} | ${movie.release_date.substring(
         0,
         4
-      )} <span class="info-rating">${String(movie.vote_average).slice(
-        0,
-        3
-      )}</span></p>
+      )} <span class="info-rating">${String(movie.vote_average).slice(0,3)}</span></p>
         </div>
         </div>
         `;
