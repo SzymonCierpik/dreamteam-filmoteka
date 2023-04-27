@@ -187,7 +187,7 @@
 @media screen and (min-width: $mobile) and (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
-  .container-header {
+  .section-header {
     background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
       url('../images/header-home-bg-mobile@2.webp');
   }
@@ -236,7 +236,7 @@
 @media screen and (min-width: $tablet) and (min-device-pixel-ratio: 2),
   screen and (min-width: $tablet) and (min-resolution: 192dpi),
   screen and (min-width: $tablet) and (min-resolution: 2dppx) {
-  .container-header {
+  .section-header {
     background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
       url('../images/header-home-bg-tablet@2.webp');
   }
@@ -255,7 +255,7 @@
 @media screen and (min-width: $desktop) and (min-device-pixel-ratio: 2),
   screen and (min-width: $desktop) and (min-resolution: 192dpi),
   screen and (min-width: $desktop) and (min-resolution: 2dppx) {
-  .container-header {
+  .section-header {
     background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
       url('../images/header-home-bg@2.webp');
   }
