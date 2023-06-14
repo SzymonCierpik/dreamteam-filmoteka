@@ -1,7 +1,5 @@
 import { initializeApp } from 'firebase/app';
-
 import { getAnalytics } from 'firebase/analytics';
-
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -11,7 +9,6 @@ import {
   updateProfile,
   AuthErrorCodes,
 } from 'firebase/auth';
-
 import {
   getFirestore,
   doc,
@@ -21,7 +18,6 @@ import {
   arrayRemove,
   getDoc,
 } from 'firebase/firestore';
-
 import {
   emailInput,
   userNameInput,
@@ -33,18 +29,14 @@ import {
   cPassField,
   userNameField,
 } from './sign-up';
-
 import { loginForm, eInput, pInput, loginError, eField, pField } from './login';
-
 import { toggleIsHidden, logoutMenu } from './auth-menu';
-
 import {
   getGuestLibrary,
   guestLibrary,
   addToQueueForGuest,
   addToWatchedForGuest,
 } from './guest-library';
-
 import { movieModal } from './modal-movie';
 
 export const logoutBtn = document.querySelector(
@@ -62,15 +54,12 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
-
 let userId;
 export let userName;
 export let isLoggedIn;
-
 const LoginEmailPassword = async () => {
   const loginEmail = eInput.value;
   const loginPassword = pInput.value;

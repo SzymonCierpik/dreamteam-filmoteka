@@ -1,7 +1,6 @@
 import { getByKey } from './get-movies-by-key';
 import { createGallery } from './create-gallery';
 import { createPagination } from './pagination';
-
 import { fetchMovieById, toggleModal, movieModal } from './modal-movie';
 import { renderMarkup } from './modal-markup';
 import { addLisenersToButtons } from './firebase-app';
@@ -75,35 +74,4 @@ function getMoviesById(e) {
   });
 }
 
-/* function getMoviesById(e) {
-  e.preventDefault();
-  query = inputForm.value.trim();
-  console.log(query);
-  let page = 1;
-  return;
-} */
-
-/* getByKey(query, page)
-    .then(data => {
-      if (data.total_pages === 0) {
-        Notiflix.Notify.info(
-          'Sorry, there are no images matching your search query. Please try again.'
-        );
-      } else {
-        Notiflix.Notify.info(`Hooray! We found ${data.total_results} images.`);
-      }
-      gallery.innerHTML = createGallery(data.results);
-
-      const pagination = createPagination(data.total_results, data.total_pages);
-
-      pagination.on('afterMove', ({ page }) => {
-        gallery.innerHTML = '';
-        getByKey(query, page).then(data => {
-          createGallery(data.results);
-        });
-      });
-    })
-    .catch(error => console.log(error));
-}
- */
 buttonForm.addEventListener('click', getMoviesById);

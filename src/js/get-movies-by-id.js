@@ -7,14 +7,12 @@ export async function getArrayofFilms(array) {
     return await axios
       .get(`${API_URL}/movie/${movie_id}?api_key=${API_KEY}&language=en-US`)
       .then(response => {
-        /*   console.log(response.data); */
         return response.data;
       })
       .catch(error => console.log(error));
   });
 
   const resultData = await Promise.all(arrayOfMovies);
-  /*  console.log(resultData);
-  console.log(resultData.data); */
+
   return resultData;
 }

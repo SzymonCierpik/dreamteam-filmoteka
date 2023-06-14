@@ -1,12 +1,11 @@
 const gallery = document.querySelector('.films-cards-set');
-const alert = document.querySelector('#wrongSearch');
 
 export const createGalleryId = data => {
   const movies = data
     .map(movie => {
-      /*  console.log(movie.id); */
+    
       let src;
-      /* console.log(movie.id); */
+
       if (movie.poster_path === null) {
         src = `https://www.more-kino.info/drama/hide-2/hide-2.jpg`;
       } else {
@@ -38,7 +37,3 @@ export const createGalleryId = data => {
     .join(' ');
   return movies;
 };
-
-/* function clearGallery() {
-  gallery.innerHTML = '';
-} */

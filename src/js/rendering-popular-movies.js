@@ -4,9 +4,6 @@ import { createPagination } from './pagination';
 import { fetchMovieById, toggleModal, movieModal } from './modal-movie';
 import { renderMarkup } from './modal-markup';
 import { addLisenersToButtons } from './firebase-app';
-/* import { scrollOnTop } from './scroll-on-top';
-import { showHideLoader } from './loader';
-import refs from './refs'; */
 
 const gallery = document.querySelector('.films-cards-set');
 

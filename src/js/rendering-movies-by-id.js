@@ -1,25 +1,16 @@
 import { createGalleryId } from './create-gallery-for-movies-by-id';
 import { getArrayofFilms } from './get-movies-by-id';
-
 import { isLoggedIn, getUserLibrary } from './firebase-app';
 import { getGuestLibrary, guestLibrary } from './guest-library';
-
 import { addLisenersToButtons } from './firebase-app';
-
 import { toggleModal } from './modal-movie';
-
 import { fetchMovieById } from './modal-movie';
-
 import { renderMarkup } from './modal-markup';
-
 import { movieModal } from './modal-movie';
 
 const gallery = document.querySelector('.films-cards-set');
-
 export let library;
-
 const john = document.querySelector('.empty__library');
-
 const libraryWatchedBtn = document.querySelector('[data-watched]');
 
 libraryWatchedBtn.addEventListener('click', () => {
