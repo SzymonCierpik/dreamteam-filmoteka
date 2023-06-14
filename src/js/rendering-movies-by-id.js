@@ -18,6 +18,8 @@ const gallery = document.querySelector('.films-cards-set');
 
 export let library;
 
+const john = document.querySelector('.empty__library');
+
 const libraryWatchedBtn = document.querySelector('[data-watched]');
 
 libraryWatchedBtn.addEventListener('click', () => {
@@ -25,6 +27,7 @@ libraryWatchedBtn.addEventListener('click', () => {
     getUserLibrary().then(response => {
       library = response;
       gallery.innerHTML = '';
+      john.classList.add('john-is-hidden');
       getArrayofFilms(library.watched).then(data => {
         gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
         const filmCardsArray = document.querySelectorAll('.film-card');
@@ -50,6 +53,7 @@ libraryWatchedBtn.addEventListener('click', () => {
   } else {
     getGuestLibrary();
     gallery.innerHTML = '';
+    john.classList.add('john-is-hidden');
     getArrayofFilms(guestLibrary.watched).then(data => {
       gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
       const filmCardsArray = document.querySelectorAll('.film-card');
@@ -81,6 +85,7 @@ libraryQueueBtn.addEventListener('click', () => {
     getUserLibrary().then(response => {
       library = response;
       gallery.innerHTML = '';
+      john.classList.add('john-is-hidden');
       getArrayofFilms(library.queue).then(data => {
         gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
         const filmCardsArray = document.querySelectorAll('.film-card');
@@ -106,6 +111,7 @@ libraryQueueBtn.addEventListener('click', () => {
   } else {
     getGuestLibrary();
     gallery.innerHTML = '';
+    john.classList.add('john-is-hidden');
     getArrayofFilms(guestLibrary.queue).then(data => {
       gallery.insertAdjacentHTML('beforeend', createGalleryId(data));
       const filmCardsArray = document.querySelectorAll('.film-card');
