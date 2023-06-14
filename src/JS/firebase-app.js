@@ -32,7 +32,7 @@ import {
   passField,
   cPassField,
   userNameField,
-} from './signup';
+} from './sign-up';
 
 import { loginForm, eInput, pInput, loginError, eField, pField } from './login';
 
@@ -43,9 +43,9 @@ import {
   guestLibrary,
   addToQueueForGuest,
   addToWatchedForGuest,
-} from './guestLibrary';
+} from './guest-library';
 
-import { movieModal } from './modalMovie';
+import { movieModal } from './modal-movie';
 
 export const logoutBtn = document.querySelector(
   '.auth-menu-logout__logout-button'

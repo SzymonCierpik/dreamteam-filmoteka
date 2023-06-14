@@ -1,4 +1,4 @@
-import { renderMarkup } from './modalMarkup';
+import { renderMarkup } from './modal-markup';
 import axios from 'axios';
 
 export async function fetchMovieById(id) {

@@ -1,7 +1,7 @@
 .section-header {
   margin: 0 auto;
   background: $gray;
-  background-image: url('../images/header-home-bg-mobile.webp'); /* fallback */
+  background-image: url('../images/header-home-bg-mobile.webp');
   background-image: linear-gradient(rgba(0 0 0 / 0.56), rgba(0 0 0 / 0.56)),
     url('../images/header-home-bg-mobile.webp');
   background-repeat: no-repeat;

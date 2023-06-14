@@ -1,7 +1,7 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import '../css/pagination.css';
-import getPopular from './getPopularMovies';
+import getPopular from './get-popular-movies';
 const TUI_VISIBLE_PAGES = 5;
 
 const container = document.querySelector('#pagination');

@@ -1,8 +1,8 @@
-import { getPopular } from './getPopularMovies';
-import { createGallery } from './createGallery';
+import { getPopular } from './get-popular-movies';
+import { createGallery } from './create-gallery';
 import { createPagination } from './pagination';
-import { fetchMovieById, toggleModal, movieModal } from './modalMovie';
-import { renderMarkup } from './modalMarkup';
+import { fetchMovieById, toggleModal, movieModal } from './modal-movie';
+import { renderMarkup } from './modal-markup';
 import { addLisenersToButtons } from './firebase-app';
 /* import { scrollOnTop } from './scroll-on-top';
 import { showHideLoader } from './loader';

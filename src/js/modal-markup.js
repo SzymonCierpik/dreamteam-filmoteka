@@ -1,4 +1,4 @@
-import { getMovies, getPopularMovies, getGenresMovies } from './getGenres.js';
+import { getMovies, getPopularMovies, getGenresMovies } from './get-genres.js';
 
 function renderMarkup({
   title,

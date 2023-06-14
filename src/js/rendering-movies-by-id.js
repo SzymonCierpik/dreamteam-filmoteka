@@ -1,18 +1,18 @@
-import { createGalleryId } from './createGalleryForMoviesById';
-import { getArrayofFilms } from './getMoviesById';
+import { createGalleryId } from './create-gallery-for-movies-by-id';
+import { getArrayofFilms } from './get-movies-by-id';
 
 import { isLoggedIn, getUserLibrary } from './firebase-app';
-import { getGuestLibrary, guestLibrary } from './guestLibrary';
+import { getGuestLibrary, guestLibrary } from './guest-library';
 
 import { addLisenersToButtons } from './firebase-app';
 
-import { toggleModal } from './modalMovie';
+import { toggleModal } from './modal-movie';
 
-import { fetchMovieById } from './modalMovie';
+import { fetchMovieById } from './modal-movie';
 
-import { renderMarkup } from './modalMarkup';
+import { renderMarkup } from './modal-markup';
 
-import { movieModal } from './modalMovie';
+import { movieModal } from './modal-movie';
 
 const gallery = document.querySelector('.films-cards-set');
 

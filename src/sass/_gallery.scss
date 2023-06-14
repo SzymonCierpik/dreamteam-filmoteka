@@ -51,8 +51,6 @@
   font-size: 12px;
   line-height: 1.16;
 }
-
-//TABLET STYLES
 @media screen and (min-width: $tablet) {
   .films-cards-set {
     padding-block: 60px;
@@ -64,7 +62,6 @@
   }
 }
 
-//DESKTOP STYLES
 @media screen and (min-width: $desktop) {
   .films-cards-set {
     gap: 16px;

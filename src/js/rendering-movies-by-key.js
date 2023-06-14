@@ -1,9 +1,9 @@
-import { getByKey } from './getMoviesByKey';
-import { createGallery } from './createGallery';
+import { getByKey } from './get-movies-by-key';
+import { createGallery } from './create-gallery';
 import { createPagination } from './pagination';
 
-import { fetchMovieById, toggleModal, movieModal } from './modalMovie';
-import { renderMarkup } from './modalMarkup';
+import { fetchMovieById, toggleModal, movieModal } from './modal-movie';
+import { renderMarkup } from './modal-markup';
 import { addLisenersToButtons } from './firebase-app';
 
 const buttonForm = document.querySelector('[data-search]');

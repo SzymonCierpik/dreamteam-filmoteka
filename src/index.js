@@ -1,12 +1,12 @@
-import './JS/loader.js';
-import './JS/renderingPopularMovies.js';
-import './JS/renderingMoviesByKey.js';
-import './JS/darkmode.js';
-import './JS/modalMovie.js';
-import './JS/team-modal.js';
+import './js/loader.js';
+import './js/rendering-popular-movies.js';
+import './js/rendering-movies-by-key.js';
+import './js/dark-mode.js';
+import './js/modal-movie.js';
+import './js/team-modal.js';
 // Firebase
-import './JS/auth-menu.js';
-import './JS/firebase-app.js';
-import './JS/signup.js';
-import './JS/login.js';
+import './js/auth-menu.js';
+import './js/firebase-app.js';
+import './js/sign-up.js';
+import './js/login.js';
 // Firebase End
